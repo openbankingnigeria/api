@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/customer")
 @Api(value = "/customer", description = "Customer related operations", consumes = "application/json", tags = {"customer"})
-public class CustomerController implements Serializable {
+public class CustomerAPI implements Serializable {
 
     @ApiOperation(value = "Finds a Customer by Customer ID",
             notes = "The Customer ID is the unique identifier for a customer as defined by a Bank",
