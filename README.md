@@ -11,6 +11,10 @@ The project is to create an open source standard APIs for which banks can publis
 ### How do I get set up? ###
 
 * Summary of set up
+    Get this reposiotry by running the command below
+    ```sh
+	$ git clone https://bitbucket.org/openbankingnigeria/api.git
+	```
 	The project can be set up easily by implementing the endpoints as fully documented [here](http://openbankingnigeria.com/specs/v1.0).
 * How to run tests
 	You can run tests right [here](http://openbankingnigeria.com/specs/v1.0). These tests show a sample request and response payload as defined in the specification.
@@ -22,6 +26,9 @@ The project is to create an open source standard APIs for which banks can publis
   The unit test should ensure the defined payload request and verb is obeyed and the corresponding response is a type of the expected response.
   You can follow the unit test that is already available in the project.
 * Code review
+  Once you complete a task, submit a pull request.
+  Your code would be merge as soon as it's been reveiwed.
+  
 * Other guidelines
 
 ### Who do I talk to? ###
