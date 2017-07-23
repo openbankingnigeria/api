@@ -1,0 +1,30 @@
+The project is to create an open source standard APIs for which banks can publish their integration APIs.
+
+### What is this repository for? ###
+
+* Quick summary
+	Although Banks generally have APIs (many are not at that level of technology maturity yet), these APIs do not cover the complete gamut of requirements of Fintechs or the need of their customers. The **Open Banking API** is a way to bring a standard to the market, for which any bank can follow, then it would make life easier for all players in the ecosystem.
+* Version
+	1.0
+* [Open Banking Nigeria](http://openbankingnigeria.com)
+
+### How do I get set up? ###
+
+* Summary of set up
+	The project can be set up easily by implementing the endpoints as fully documented [here](http://openbankingnigeria.com/specs/v1.0).
+* How to run tests
+	You can run tests right [here](http://openbankingnigeria.com/specs/v1.0). These tests show a sample request and response payload as defined in the specification.
+
+### Contribution guidelines ###
+
+* Writing tests
+  All new and modified endpoints **MUST** have an equivalent unit test.
+  The unit test should ensure the defined payload request and verb is obeyed and the corresponding response is a type of the expected response.
+  You can follow the unit test that is already available in the project.
+* Code review
+* Other guidelines
+
+### Who do I talk to? ###
+
+* The Openbankingnieria team
+	send a mail to [contribute@openbankingnigeria.com](mailto:contribute@openbankingnigeria.com) or fill out the contact form at [Open Banking Nigeria](http://openbankingnigeria.com) and we would contact you.
