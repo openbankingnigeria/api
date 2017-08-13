@@ -1,4 +1,4 @@
-package com.openbanking.api.ng;
+package com.openbanking.api.ng.definition;
 
 public enum CustomerStatus {
 

@@ -29,18 +29,18 @@ public class CustomerAPI implements Serializable {
     }
 
     @RequestMapping(value = "/getByPhoneNumber", method = RequestMethod.GET)
-    public List<Customer> getByPhoneNumber(String phoneNumber) {
-        return Collections.EMPTY_LIST;
+    public List<Customer> getByPhoneNumber(@ApiParam(value = "The Customer's Phone Number ex: +234") String phoneNumber) {
+        return Collections.singletonList(new Customer());
     }
 
     @RequestMapping(value = "/getByEmail", method = RequestMethod.GET)
-    public List<Customer> getByEmail(String email) {
-        return Collections.EMPTY_LIST;
+    public List<Customer> getByEmail(@ApiParam(value = "The Customer's Email Address") String email) {
+        return Collections.singletonList(new Customer());
     }
 
     @RequestMapping(value = "/getByBVN", method = RequestMethod.GET)
-    public List<Customer> getByBVN(String bvn) {
-        return Collections.EMPTY_LIST;
+    public List<Customer> getByBVN(@ApiParam(value = "The Customer's Bank Verification Number") String bvn) {
+        return Collections.singletonList(new Customer());
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)

@@ -1,11 +1,13 @@
 package com.openbanking.api.ng.payload.customer;
 
-import com.openbanking.api.ng.CustomerStatus;
+import com.openbanking.api.ng.definition.CustomerStatus;
 import com.openbanking.api.ng.definition.CustomerType;
 
 import java.util.Date;
 
 public class Customer {
+
+    private String customerID;
 
     private String firstName;
 
@@ -105,5 +107,13 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
     }
 }
