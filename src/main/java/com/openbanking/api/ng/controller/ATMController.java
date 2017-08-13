@@ -19,11 +19,15 @@ public class ATMController {
             response = ATM.class)
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Terminal ID supplied"),
             @ApiResponse(code = 404, message = "ATM not found")})
-    @RequestMapping(value = "/getATMs", method = RequestMethod.GET)
+    @RequestMapping(value = "/getATM", method = RequestMethod.GET)
     public ATM getAtm(@ApiParam(value = "The Atm unique identifier") String atmTerminalId){
         return new ATM();
     }
 
+    @ApiOperation(value = "Get all ATMs in a Bank",
+            notes = "The ....")
+    @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Terminal ID supplied"),
+            @ApiResponse(code = 404, message = "ATM not found")})
     @RequestMapping(value = "/getATMs", method = RequestMethod.GET)
     public List<ATM> getAtms(){
         return Collections.singletonList(new ATM());
