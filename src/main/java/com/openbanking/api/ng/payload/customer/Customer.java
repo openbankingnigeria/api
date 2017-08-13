@@ -1,6 +1,6 @@
 package com.openbanking.api.ng.payload.customer;
 
-import com.openbanking.api.ng.CustomerStatus;
+import com.openbanking.api.ng.definition.CustomerStatus;
 import com.openbanking.api.ng.definition.CustomerType;
 
 import java.util.Date;
