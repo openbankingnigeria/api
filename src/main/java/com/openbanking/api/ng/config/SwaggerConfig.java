@@ -37,7 +37,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title(environment.getProperty("ob.api.name"))
                 .description(environment.getProperty("ob.api.description"))
-                .version("")
+                .version(environment.getProperty("ob.version"))
                 .termsOfServiceUrl(environment.getProperty("ob.url"))
                 .license(environment.getProperty("ob.licence"))
                 .licenseUrl(environment.getProperty("ob.licence.url"))

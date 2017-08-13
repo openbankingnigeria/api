@@ -24,7 +24,7 @@ public class CustomerAPI implements Serializable {
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Customer ID supplied"),
             @ApiResponse(code = 404, message = "Customer not found")})
     @RequestMapping(value = "/getByCustomerId", method = RequestMethod.GET)
-    public Customer getByCustomerId(@ApiParam(value = "The Customer's unique identifier") String customerId) {
+    public Customer getByCustomerId(@ApiParam(value = "The Customer's unique identifier",name = "customerId") String customerId) {
         return new Customer();
     }
 
