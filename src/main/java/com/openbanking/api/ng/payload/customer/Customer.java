@@ -7,6 +7,8 @@ import java.util.Date;
 
 public class Customer {
 
+    private String customerID;
+
     private String firstName;
 
     private String lastName;
@@ -105,5 +107,13 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
     }
 }
