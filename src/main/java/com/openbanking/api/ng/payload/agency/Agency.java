@@ -12,7 +12,7 @@ public class Agency {
     private int longitude;
     private String phoneNumber;
     private AgencyService agencyService;
-    
+
 
 
 

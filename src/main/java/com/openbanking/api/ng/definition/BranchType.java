@@ -1,5 +1,5 @@
 package com.openbanking.api.ng.definition;
 
 public enum BranchType {
-    FULLBRANCH, MINIBRANCH, SERVICEOUTLET
+    FULL_BRANCH, MINI_BRANCH, SERVICE_OUTLET
 }
