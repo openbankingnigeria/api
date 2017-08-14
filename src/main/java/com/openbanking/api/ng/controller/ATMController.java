@@ -1,6 +1,5 @@
 package com.openbanking.api.ng.controller;
 import com.openbanking.api.ng.payload.atm.ATM;
-import com.openbanking.api.ng.payload.customer.Customer;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,6 +27,7 @@ public class ATMController {
     public List<ATM> getAtms(){
         return Collections.singletonList(new ATM());
     }
+
     @RequestMapping(value = "/getATMsByBranch", method = RequestMethod.GET)
     public List<ATM> getAtmsByBranch(@ApiParam(value = "The Bank's Branch code") String branchCode){
         return Collections.singletonList(new ATM());
