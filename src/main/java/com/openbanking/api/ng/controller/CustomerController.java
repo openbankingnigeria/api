@@ -1,5 +1,4 @@
 package com.openbanking.api.ng.controller;
-
 import com.openbanking.api.ng.definition.OperationStatus;
 import com.openbanking.api.ng.payload.customer.Customer;
 import com.openbanking.api.ng.payload.customer.CustomerUpdateRequest;
@@ -23,6 +22,8 @@ public class CustomerController implements Serializable {
             response = Customer.class)
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Customer ID supplied"),
             @ApiResponse(code = 404, message = "Customer not found")})
+
+
     @RequestMapping(value = "/getByCustomerId", method = RequestMethod.GET)
     public Customer getByCustomerId(@ApiParam(value = "The Customer's unique identifier") String customerId) {
         return new Customer();

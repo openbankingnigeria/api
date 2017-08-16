@@ -22,11 +22,12 @@ public class BranchController {
             return new Branch();
         }
         @RequestMapping(value = "/getBranches", method = RequestMethod.GET)
-        public List<Branch> getBranches(){
+        public List<Branch> getBranches() {
                 return Collections.singletonList(new Branch());
         }
+
         @RequestMapping(value = "/getBranchesAtLocation", method = RequestMethod.GET)
-        public List<Branch> getBranchesAtLocation(){
+        public List<Branch> getBranchesAtLocation(@ApiParam(value = "The Branch's longitude and latitude") int latitude, int longitude){
                 return Collections.singletonList(new Branch());
         }
 

@@ -33,7 +33,7 @@ public class ATMController {
         return Collections.singletonList(new ATM());
     }
     @RequestMapping(value = "/getATMsNearLocation", method = RequestMethod.GET)
-    public List<ATM> getatmsnearlocation(@ApiParam(value = "The location's longitude and latitude") int latitude, int longitude){
+    public List<ATM> getatmsnearlocation(@ApiParam(value = "The ATM's longitude and latitude") int latitude, int longitude){
         return Collections.singletonList(new ATM());
     }
 }
