@@ -1,0 +1,144 @@
+package com.openbanking.api.ng.payload.account;
+
+import com.openbanking.api.ng.definition.AccountType;
+import com.openbanking.api.ng.definition.Currency;
+
+import java.util.Date;
+
+public class Account {
+    private String accountNumber;
+    private String customerId;
+    private String bvn;
+    private String fullName;
+    private String shortName;
+    private Currency currency;
+    private Date accountOpeningDate;
+    private Date lastTransactionDate;
+    private String status;
+    private String bankSortCode;
+    private String accountBalance;
+    private String phoneNumber;
+    private AccountType accountType;
+    private String accountManagerName;
+    private String accountManagerPhone;
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getBvn() {
+        return bvn;
+    }
+
+    public void setBvn(String bvn) {
+        this.bvn = bvn;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
+    }
+
+    public Date getAccountOpeningDate() {
+        return accountOpeningDate;
+    }
+
+    public void setAccountOpeningDate(Date accountOpeningDate) {
+        this.accountOpeningDate = accountOpeningDate;
+    }
+
+    public Date getLastTransactionDate() {
+        return lastTransactionDate;
+    }
+
+    public void setLastTransactionDate(Date lastTransactionDate) {
+        this.lastTransactionDate = lastTransactionDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getBankSortCode() {
+        return bankSortCode;
+    }
+
+    public void setBankSortCode(String bankSortCode) {
+        this.bankSortCode = bankSortCode;
+    }
+
+    public String getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void setAccountBalance(String accountBalance) {
+        this.accountBalance = accountBalance;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public AccountType getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(AccountType accountType) {
+        this.accountType = accountType;
+    }
+
+    public String getAccountManagerName() {
+        return accountManagerName;
+    }
+
+    public void setAccountManagerName(String accountManagerName) {
+        this.accountManagerName = accountManagerName;
+    }
+
+    public String getAccountManagerPhone() {
+        return accountManagerPhone;
+    }
+
+    public void setAccountManagerPhone(String accountManagerPhone) {
+        this.accountManagerPhone = accountManagerPhone;
+    }
+}

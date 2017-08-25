@@ -6,8 +6,8 @@ public class CardLimit {
     private String transactiontype;
     private String periodtype;
     private int maximumTransaction;
-    private String MaxAmountPerTransaction;
-    private String MaxCumulativeAmount;
+    private String maxAmountPerTransaction;
+    private String maxCumulativeAmount;
     private String outstandingTranscation;
     private String outstandingCumulativeAmount;
 
@@ -52,19 +52,19 @@ public class CardLimit {
     }
 
     public String getMaxAmountPerTransaction() {
-        return MaxAmountPerTransaction;
+        return maxAmountPerTransaction;
     }
 
     public void setMaxAmountPerTransaction(String maxAmountPerTransaction) {
-        MaxAmountPerTransaction = maxAmountPerTransaction;
+        this.maxAmountPerTransaction = maxAmountPerTransaction;
     }
 
     public String getMaxCumulativeAmount() {
-        return MaxCumulativeAmount;
+        return maxCumulativeAmount;
     }
 
     public void setMaxCumulativeAmount(String maxCumulativeAmount) {
-        MaxCumulativeAmount = maxCumulativeAmount;
+        this.maxCumulativeAmount = maxCumulativeAmount;
     }
 
     public String getOutstandingTranscation() {
