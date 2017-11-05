@@ -6,7 +6,7 @@ The project is to create an open source standard APIs for which banks can publis
 	Although Banks generally have APIs (many are not at that level of technology maturity yet), these APIs do not cover the complete gamut of requirements of Fintechs or the need of their customers. The **Open Banking API** is a way to bring a standard to the market, for which any bank can follow, then it would make life easier for all players in the ecosystem.
 * Version
 	1.0
-* [Open Banking Nigeria](http://openbankingnigeria.com)
+* [Open Banking Nigeria](https://openbanking.ng)
 
 ### How do I get set up? ###
 
