@@ -17,10 +17,10 @@ The project is to create an open source standard APIs for which banks can publis
 	$ git clone https://bitbucket.org/openbankingnigeria/api.git
 	```  
     
-    The project can be set up easily by implementing the endpoints as fully documented [here](http://openbankingnigeria.com/specs/v1.0).
+    The project can be set up easily by implementing the endpoints as fully documented [here](https://api.openbanking.ng/).
     
 * How to run tests  
-	You can run tests right [here](http://openbankingnigeria.com/specs/v1.0). These tests show a sample request and response payload as defined in the specification.
+	You can run tests right [here](https://api.openbanking.ng/). These tests show a sample request and response payload as defined in the specification.
 
 ### Contribution guidelines ###
 
@@ -37,4 +37,4 @@ The project is to create an open source standard APIs for which banks can publis
 ### Who do I talk to? ###
 
 * The Openbankingnieria team
-	send a mail to [contribute@openbankingnigeria.com](mailto:contribute@openbankingnigeria.com) or fill out the contact form at [Open Banking Nigeria](http://openbankingnigeria.com) and we would contact you.
+	send a mail to [contribute@openbanking.ng](mailto:contribute@openbanking.ng) or fill out the contact form at [Open Banking Nigeria](http://openbanking.ng) and we would contact you.
