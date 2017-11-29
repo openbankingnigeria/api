@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/direct_debit")
-@Api(value = "/direct_debit", description = "Direct Debit related operations", consumes = "application/json", tags = {"direct_debit"})
+@Api(value = "Direct Debit", description = "Direct Debit related operations", consumes = "application/json", tags = {"direct_debit"})
 
 public class DirectDebitController {
     @RequestMapping(value = "/setupDirectDebit", method = RequestMethod.POST)

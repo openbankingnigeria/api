@@ -2,7 +2,7 @@ package com.openbanking.api.ng.payload.account;
 
 import com.openbanking.api.ng.definition.Currency;
 
-public class GetAccountType {
+public class AccountType {
     private String accountTypeId;
     private String accountTypeName;
     private String minimumBalance;

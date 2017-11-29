@@ -2,7 +2,7 @@ package com.openbanking.api.ng.payload.account;
 
 import java.util.Date;
 
-public class OpenAccount {
+public class AccountCreationRequest {
     private String customerId;
     private String accountName;
     private String firstName;

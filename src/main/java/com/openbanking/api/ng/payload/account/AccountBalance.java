@@ -1,14 +1,15 @@
 package com.openbanking.api.ng.payload.account;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class AccountBalance {
     private String accountNumber;
     private String accountName;
-    private String availiableBalance;
-    private String clearedBalance;
-    private String unClearedBalance;
-    private String lienBalance;
+    private BigDecimal availiableBalance;
+    private BigDecimal clearedBalance;
+    private BigDecimal unClearedBalance;
+    private BigDecimal lienBalance;
     private Date date;
 
     public String getAccountNumber() {
@@ -27,35 +28,35 @@ public class AccountBalance {
         this.accountName = accountName;
     }
 
-    public String getAvailiableBalance() {
+    public BigDecimal getAvailiableBalance() {
         return availiableBalance;
     }
 
-    public void setAvailiableBalance(String availiableBalance) {
+    public void setAvailiableBalance(BigDecimal availiableBalance) {
         this.availiableBalance = availiableBalance;
     }
 
-    public String getClearedBalance() {
+    public BigDecimal getClearedBalance() {
         return clearedBalance;
     }
 
-    public void setClearedBalance(String clearedBalance) {
+    public void setClearedBalance(BigDecimal clearedBalance) {
         this.clearedBalance = clearedBalance;
     }
 
-    public String getUnClearedBalance() {
+    public BigDecimal getUnClearedBalance() {
         return unClearedBalance;
     }
 
-    public void setUnClearedBalance(String unClearedBalance) {
+    public void setUnClearedBalance(BigDecimal unClearedBalance) {
         this.unClearedBalance = unClearedBalance;
     }
 
-    public String getLienBalance() {
+    public BigDecimal getLienBalance() {
         return lienBalance;
     }
 
-    public void setLienBalance(String lienBalance) {
+    public void setLienBalance(BigDecimal lienBalance) {
         this.lienBalance = lienBalance;
     }
 

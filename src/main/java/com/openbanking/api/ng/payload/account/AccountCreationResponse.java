@@ -1,6 +1,6 @@
 package com.openbanking.api.ng.payload.account;
 
-public class OpenAccountResult {
+public class AccountCreationResponse {
     private String accountNumber;
     private String customerId;
 

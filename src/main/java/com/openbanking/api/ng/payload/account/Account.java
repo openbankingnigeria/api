@@ -2,13 +2,21 @@ package com.openbanking.api.ng.payload.account;
 
 import com.openbanking.api.ng.definition.AccountType;
 import com.openbanking.api.ng.definition.Currency;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
 
 public class Account {
+    @ApiModelProperty(value = "10 digit NUBAN")
     private String accountNumber;
+
+    @ApiModelProperty(value = "The Customer ID as defined by the Bank")
     private String customerId;
+
+    @ApiModelProperty(value = "The BVN tied to the Account")
     private String bvn;
+
+    @ApiModelProperty(value = "The full Name registered with the Account")
     private String fullName;
     private String shortName;
     private Currency currency;

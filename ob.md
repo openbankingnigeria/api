@@ -233,16 +233,16 @@ A collection of API for the OpenBanking Project
 # /ACCOUNT/OPENACCOUNT
 ## ***GET*** 
 
-**Summary:** openAccount
+**Summary:** accountCreationRequest
 
 ### HTTP Request 
-`***GET*** /account/openAccount` 
+`***GET*** /account/accountCreationRequest` 
 
 **Parameters**
 
 | Name | Located in | Description | Required | Type |
 | ---- | ---------- | ----------- | -------- | ---- |
-| openAccount | body | openAccount | Yes |  |
+| accountCreationRequest | body | accountCreationRequest | Yes |  |
 
 **Responses**
 
