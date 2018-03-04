@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collections;
 import java.util.List;
 @RestController
-@RequestMapping("/agency")
-@Api(value = "/agency", description = "Agency related operations", consumes = "application/json", tags = {"agency"})
+@RequestMapping("/agencies")
+@Api(value = "/agencies", description = "Agency related operations", consumes = "application/json", tags = {"agency"})
 public class AgencyController {
     @ApiOperation(value = "Finds an Agency by Agency Code",
             notes = "The Agency Code is the unique identifier for an Agency  as defined by a Bank or Agency Network",
@@ -24,7 +24,7 @@ public class AgencyController {
         return new Agency();
     }
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Agency> getAgencies(){
         return Collections.singletonList(new Agency());
     }
