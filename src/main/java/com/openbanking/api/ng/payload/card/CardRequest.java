@@ -1,10 +1,11 @@
 package com.openbanking.api.ng.payload.card;
 import com.openbanking.api.ng.definition.CardPickupType;
 
-public class RequestCard {
+public class CardRequest {
     private String accountNumber;
     private String productId;
     private CardPickupType cardPickupType;
+    private CardType cardType;
     private String branchId;
     private String deliveryAddress;
 
@@ -46,5 +47,13 @@ public class RequestCard {
 
     public void setDeliveryAddress(String deliveryAddress) {
         this.deliveryAddress = deliveryAddress;
+    }
+
+    public CardType getCardType() {
+        return cardType;
+    }
+
+    public void setCardType(CardType cardType) {
+        this.cardType = cardType;
     }
 }

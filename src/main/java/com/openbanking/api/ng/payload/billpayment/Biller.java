@@ -2,7 +2,7 @@ package com.openbanking.api.ng.payload.billpayment;
 
 import com.openbanking.api.ng.definition.Currency;
 
-public class GetBiller {
+public class Biller {
     private String categoryId;
     private String billerCategory;
     private String categoryDescription;

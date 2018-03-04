@@ -5,7 +5,7 @@ import com.openbanking.api.ng.definition.Currency;
 
 import java.util.Date;
 
-public class GetDirectDebit {
+public class DirectDebit {
     private String status;
     private String referenceId;
     private String sourceAccount;

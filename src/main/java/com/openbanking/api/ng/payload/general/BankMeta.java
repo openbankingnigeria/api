@@ -1,7 +1,7 @@
 package com.openbanking.api.ng.payload.general;
 import com.openbanking.api.ng.definition.BankCategory;
 
-public class GeneralBankMeta {
+public class BankMeta {
     private String bankName;
     private String headOfficeAddress;
     private String swiftCode;

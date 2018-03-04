@@ -2,10 +2,7 @@ package com.openbanking.api.ng.controller;
 import com.openbanking.api.ng.payload.transaction.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiParam;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -13,33 +10,38 @@ import java.util.List;
 @RestController
 @RequestMapping("/transaction")
 @Api(value = "/transaction", description = "Transaction related operations", consumes = "application/json", tags = {"transaction"})
-
 public class TransactionController {
-    @RequestMapping(value = "/singleTransferWithinBank", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/transfer/intra-bank", method = RequestMethod.POST)
     public List<SingleTransferBankOutput> singleTransferWithinBank(@RequestBody SingleTransferBank singleTransferBank) {
         return Collections.singletonList(new SingleTransferBankOutput());
     }
-    @RequestMapping(value = "/singleTransferOtherBank", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/transfer/inter-bank", method = RequestMethod.POST)
     public List<SingleTransferBankOutput> singleTransferOtherBank(@RequestBody SingleTransferBank singleTransferBank) {
         return Collections.singletonList(new SingleTransferBankOutput());
     }
-    @RequestMapping(value = "/singleTransferToEmail", method = RequestMethod.GET)
-    public List<SingleTransferBankOutput> singleTransferToEmail(@RequestBody SingleTransfer singleTransfer) {
+
+    @RequestMapping(value = "/transfer/email/{email}", method = RequestMethod.POST)
+    public List<SingleTransferBankOutput> singleTransferToEmail(@PathVariable String email, @RequestBody SingleTransfer singleTransfer) {
         return Collections.singletonList(new SingleTransferBankOutput());
     }
-    @RequestMapping(value = "/singleTransferToPhone", method = RequestMethod.GET)
-    public List<SingleTransferBankOutput> singleTransferToPhone(@RequestBody SingleTransfer singleTransfer) {
+
+    @RequestMapping(value = "/transfer/phone/{phone}", method = RequestMethod.POST)
+    public List<SingleTransferBankOutput> singleTransferToPhone(@PathVariable String phone, @RequestBody SingleTransfer singleTransfer) {
         return Collections.singletonList(new SingleTransferBankOutput());
     }
-    @RequestMapping(value = "/multipleTransferWithinBank", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/transfers/inter-bank", method = RequestMethod.POST)
     public List<MultipleTransferBankOutput> multipleTransferWithinBank(@RequestBody MultipleTransferBank multipleTransferBank) {
         return Collections.singletonList(new MultipleTransferBankOutput());
     }
-    @RequestMapping(value = "/multipleTransferOtherBank", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/transfers/intra-bank", method = RequestMethod.POST)
     public List<MultipleTransferBankOutput> multipleTransferOtherBank(@RequestBody MultipleTransferBank multipleTransferBank) {
         return Collections.singletonList(new MultipleTransferBankOutput());
     }
-    @RequestMapping(value = "/multipleTransferToPhone", method = RequestMethod.GET)
+    @RequestMapping(value = "/transfer/emails/", method = RequestMethod.POST)
     public List<MultipleTransferBankOutput> multipleTransferToPhone(@RequestBody MultipleTransfer multipleTransfer) {
         return Collections.singletonList(new MultipleTransferBankOutput());
     }

@@ -6,7 +6,7 @@ import java.util.Date;
 public class AccountBalance {
     private String accountNumber;
     private String accountName;
-    private BigDecimal availiableBalance;
+    private BigDecimal availableBalance;
     private BigDecimal clearedBalance;
     private BigDecimal unClearedBalance;
     private BigDecimal lienBalance;
@@ -28,12 +28,12 @@ public class AccountBalance {
         this.accountName = accountName;
     }
 
-    public BigDecimal getAvailiableBalance() {
-        return availiableBalance;
+    public BigDecimal getAvailableBalance() {
+        return availableBalance;
     }
 
-    public void setAvailiableBalance(BigDecimal availiableBalance) {
-        this.availiableBalance = availiableBalance;
+    public void setAvailableBalance(BigDecimal availableBalance) {
+        this.availableBalance = availableBalance;
     }
 
     public BigDecimal getClearedBalance() {

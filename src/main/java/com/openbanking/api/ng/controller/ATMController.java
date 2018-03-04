@@ -1,6 +1,7 @@
 package com.openbanking.api.ng.controller;
 import com.openbanking.api.ng.payload.atm.ATM;
 import io.swagger.annotations.*;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +19,8 @@ public class ATMController {
             response = ATM.class)
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Terminal ID supplied"),
             @ApiResponse(code = 404, message = "ATM not found")})
-    @RequestMapping(value = "/getATM", method = RequestMethod.GET)
-    public ATM getAtm(@ApiParam(value = "The Atm unique identifier") String atmTerminalId){
+    @RequestMapping(value = "/{terminalId}", method = RequestMethod.GET)
+    public ATM getAtm(@PathVariable @ApiParam(value = "The Atm unique identifier") String terminalId) {
         return new ATM();
     }
 

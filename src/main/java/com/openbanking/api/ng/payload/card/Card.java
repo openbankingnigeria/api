@@ -1,28 +1,62 @@
 package com.openbanking.api.ng.payload.card;
-import com.openbanking.api.ng.definition.CardBrand;
 import com.openbanking.api.ng.definition.CardType;
-import com.openbanking.api.ng.definition.Currency;
+import java.util.Date;
+
 public class Card {
-    private CardBrand cardBrand;
-    private String productId;
+    private String accountNumber;
+    private String maskedPan;
+    private String token;
+    private Date expiry;
+    private String issuerNumber;
+    private String cardName;
     private CardType cardType;
-    private String productName;
-    private Currency currency;
-    private String purchasePrice;
-    private int validityPeriod;
-    public String getProductId() {
-        return productId;
+
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
-    public CardBrand getCardBrand() {
-        return cardBrand;
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
-    public void setCardBrand(CardBrand cardBrand) {
-        this.cardBrand = cardBrand;
+    public String getMaskedPan() {
+        return maskedPan;
+    }
+
+    public void setMaskedPan(String maskedPan) {
+        this.maskedPan = maskedPan;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public Date getExpiry() {
+        return expiry;
+    }
+
+    public void setExpiry(Date expiry) {
+        this.expiry = expiry;
+    }
+
+    public String getIssuerNumber() {
+        return issuerNumber;
+    }
+
+    public void setIssuerNumber(String issuerNumber) {
+        this.issuerNumber = issuerNumber;
+    }
+
+    public String getCardName() {
+        return cardName;
+    }
+
+    public void setCardName(String cardName) {
+        this.cardName = cardName;
     }
 
     public CardType getCardType() {
@@ -32,38 +66,4 @@ public class Card {
     public void setCardType(CardType cardType) {
         this.cardType = cardType;
     }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-
-    }
-
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
-    }
-
-    public String getPurchasePrice() {
-        return purchasePrice;
-    }
-
-    public void setPurchasePrice(String purchasePrice) {
-        this.purchasePrice = purchasePrice;
-    }
-    public int getValidityPeriod() {
-        return validityPeriod;
-    }
-
-    public void setValidityPeriod(int validityPeriod) {
-        this.validityPeriod = validityPeriod;
-    }
-
-
 }

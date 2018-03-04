@@ -1,10 +1,12 @@
 package com.openbanking.api.ng.controller;
-import io.swagger.annotations.Api;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 import com.openbanking.api.ng.payload.agency.Agency;
 import io.swagger.annotations.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.Collections;
 import java.util.List;
 @RestController
@@ -17,18 +19,20 @@ public class AgencyController {
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Agency Code supplied"),
             @ApiResponse(code = 404, message = "Agency not found")})
 
-    @RequestMapping(value = "/getAgency", method = RequestMethod.GET)
-    public Agency getAgency(@ApiParam(value = "The Agency's unique identifier") String agencyId) {
+    @RequestMapping(value = "/{agencyId}", method = RequestMethod.GET)
+    public Agency getAgency(@PathVariable @ApiParam(value = "The Agency's unique identifier") String agencyId) {
         return new Agency();
     }
-    @RequestMapping(value = "/getAgencies", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public List<Agency> getAgencies(){
         return Collections.singletonList(new Agency());
     }
 
-    @RequestMapping(value = "/getAgencysAtLocation", method = RequestMethod.GET)
-    public List<Agency> getAgenciesAtLocation(@ApiParam(value = "The Agency's longitude and latitude") int latitude, int longitude){
-        return Collections.singletonList(new Agency());
+    @RequestMapping(value = "/latitude/{latitude}/longitude/{longitude}", method = RequestMethod.GET)
+    public List<Agency> getAgenciesAtLocation(@PathVariable @ApiParam(value = "The location's latitude") int latitude,
+                                              @PathVariable @ApiParam(value = "The location's longitude") int longitude) {
+        return Collections.nCopies(3, new Agency());
     }
 }
 

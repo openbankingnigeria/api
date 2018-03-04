@@ -3,12 +3,13 @@ package com.openbanking.api.ng.payload.card;
 public class CardLimit {
     private String cardToken;
     private String Channel;
-    private String transactiontype;
-    private String periodtype;
+    private CardType cardType;
+    private String transactionType;
+    private String periodType;
     private int maximumTransaction;
     private String maxAmountPerTransaction;
     private String maxCumulativeAmount;
-    private String outstandingTranscation;
+    private String outstandingTransaction;
     private String outstandingCumulativeAmount;
 
     public String getCardToken() {
@@ -27,20 +28,20 @@ public class CardLimit {
         Channel = channel;
     }
 
-    public String getTransactiontype() {
-        return transactiontype;
+    public String getTransactionType() {
+        return transactionType;
     }
 
-    public void setTransactiontype(String transactiontype) {
-        this.transactiontype = transactiontype;
+    public void setTransactionType(String transactionType) {
+        this.transactionType = transactionType;
     }
 
-    public String getPeriodtype() {
-        return periodtype;
+    public String getPeriodType() {
+        return periodType;
     }
 
-    public void setPeriodtype(String periodtype) {
-        this.periodtype = periodtype;
+    public void setPeriodType(String periodType) {
+        this.periodType = periodType;
     }
 
     public int getMaximumTransaction() {
@@ -67,12 +68,12 @@ public class CardLimit {
         this.maxCumulativeAmount = maxCumulativeAmount;
     }
 
-    public String getOutstandingTranscation() {
-        return outstandingTranscation;
+    public String getOutstandingTransaction() {
+        return outstandingTransaction;
     }
 
-    public void setOutstandingTranscation(String outstandingTranscation) {
-        this.outstandingTranscation = outstandingTranscation;
+    public void setOutstandingTransaction(String outstandingTransaction) {
+        this.outstandingTransaction = outstandingTransaction;
     }
 
     public String getOutstandingCumulativeAmount() {
@@ -81,5 +82,13 @@ public class CardLimit {
 
     public void setOutstandingCumulativeAmount(String outstandingCumulativeAmount) {
         this.outstandingCumulativeAmount = outstandingCumulativeAmount;
+    }
+
+    public CardType getCardType() {
+        return cardType;
+    }
+
+    public void setCardType(CardType cardType) {
+        this.cardType = cardType;
     }
 }

@@ -5,7 +5,6 @@ import com.openbanking.api.ng.definition.Currency;
 import java.util.Date;
 
 public class InvestmentBook {
-    private String investmentTd;
     private String productId;
     private String accountNumber;
     private String amount;
