@@ -1,6 +1,6 @@
 package com.openbanking.api.ng.payload.card;
+
 import com.openbanking.api.ng.definition.CardBrand;
-import com.openbanking.api.ng.definition.CardType;
 import com.openbanking.api.ng.definition.Currency;
 public class CardType {
     private CardBrand cardBrand;
