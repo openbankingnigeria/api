@@ -5,6 +5,9 @@ import io.github.benas.randombeans.api.EnhancedRandom;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -39,5 +42,15 @@ public class ApiNgApplication {
 				.scanClasspathForConcreteTypes(true)
 				.overrideDefaultInitialization(false)
 				.build();
+	}
+
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurerAdapter() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**");
+			}
+		};
 	}
 }
