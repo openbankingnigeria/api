@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class Account {
     @ApiModelProperty(value = "10 digit NUBAN")
-    private String accountNumber = "012345678";
+    private String accountNumber = "0123456789";
 
     @ApiModelProperty(value = "The Customer ID as defined by the Bank")
     private String customerId;
