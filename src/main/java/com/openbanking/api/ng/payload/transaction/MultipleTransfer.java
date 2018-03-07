@@ -3,9 +3,9 @@ package com.openbanking.api.ng.payload.transaction;
 import java.util.List;
 
 public class MultipleTransfer {
-    private String batchId;
+    private String batchId = "1";
 
-    private String numberOfTransaction;
+    private String numberOfTransaction = "1";
 
     List<SingleTransfer> singleTransfer;
 

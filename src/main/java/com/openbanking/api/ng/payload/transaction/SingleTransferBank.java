@@ -1,9 +1,9 @@
 package com.openbanking.api.ng.payload.transaction;
 
 public class SingleTransferBank extends SingleTransfer {
-    private String destinationAccount;
-    private String destinationAccountName;
-    private String destinationBankCode;
+    private String destinationAccount = "0123456789";
+    private String destinationAccountName = "Sodiq Fagbola";
+    private String destinationBankCode = "012";
 
     public String getDestinationAccount() {
         return destinationAccount;

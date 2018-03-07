@@ -1,9 +1,9 @@
 package com.openbanking.api.ng.payload.billpayment;
 
 public class BillerCategory {
-    private String billingSystemId;
-    private String categoryName;
-    private String categoryDescription;
+    private String billingSystemId = "1";
+    private String categoryName = "Electricity";
+    private String categoryDescription = "Electricity";
 
     public String getBillingSystemId() {
         return billingSystemId;

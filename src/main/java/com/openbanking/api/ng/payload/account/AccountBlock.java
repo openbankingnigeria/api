@@ -3,7 +3,7 @@ package com.openbanking.api.ng.payload.account;
 import com.openbanking.api.ng.definition.BlockType;
 
 public class AccountBlock {
-    private String accountNumber;
+    private String accountNumber = "0123456789";
     private BlockType blockType;
     private String blockMessage;
 

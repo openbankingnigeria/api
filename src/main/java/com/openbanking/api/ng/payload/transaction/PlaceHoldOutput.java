@@ -1,9 +1,9 @@
 package com.openbanking.api.ng.payload.transaction;
 
 public class PlaceHoldOutput {
-    private String holdReferenceId;
-    private String responseCode;
-    private String responseDescription;
+    private String holdReferenceId = "1";
+    private String responseCode = "00";
+    private String responseDescription = "Successful";
 
     public String getHoldReferenceId() {
         return holdReferenceId;

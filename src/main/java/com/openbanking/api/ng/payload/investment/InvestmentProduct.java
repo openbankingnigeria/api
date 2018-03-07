@@ -2,10 +2,10 @@ package com.openbanking.api.ng.payload.investment;
 import com.openbanking.api.ng.definition.InvestmentBookingType;
 
 public class InvestmentProduct {
-    private String productId;
-    private String productName;
+    private String productId = "1";
+    private String productName = "Mutual Fund";
     private String productType;
-    private InvestmentBookingType bookingType;
+    private InvestmentBookingType bookingType = InvestmentBookingType.DISCOUNTED;
     private String interestDiscountRate;
 
     public String getProductId() {

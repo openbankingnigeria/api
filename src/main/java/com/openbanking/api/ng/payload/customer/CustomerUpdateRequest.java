@@ -2,15 +2,15 @@ package com.openbanking.api.ng.payload.customer;
 
 public class CustomerUpdateRequest {
 
-    private String customerId;
+    private String customerId = "1";
 
-    private String customerName;
+    private String customerName = "Sodiq Fagbola";
 
-    private String email;
+    private String email = "sodiq@openbanking.com";
 
-    private String phoneNumber;
+    private String phoneNumber = "0900000000";
 
-    private String address;
+    private String address = "Lagos, Nigeria";
 
     public String getCustomerId() {
         return customerId;

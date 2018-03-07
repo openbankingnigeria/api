@@ -4,9 +4,9 @@ import java.util.List;
 
 public class MultipleTransferBank {
 
-    private String batchId;
+    private String batchId = "1";
 
-    private String numberOfTransaction;
+    private String numberOfTransaction = "1";
 
     List<SingleTransferBank> singleTransferBanks;
 
