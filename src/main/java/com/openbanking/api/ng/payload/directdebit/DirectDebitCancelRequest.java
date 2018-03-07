@@ -4,7 +4,7 @@ import com.openbanking.api.ng.definition.DirectDebitCancelReason;
 
 public class DirectDebitCancelRequest {
 
-    private String accountNumber;
+    private String accountNumber = "0123456789";
 
     private String referenceNumber;
 

@@ -3,9 +3,9 @@ package com.openbanking.api.ng.payload.transaction;
 import com.openbanking.api.ng.definition.OperationStatus;
 
 public class SingleTransferBankOutput {
-    private OperationStatus responseCode;
-    private String responseMessage;
-    private String transactionReferenceId;
+    private OperationStatus responseCode = OperationStatus.SUCCESSFUL;
+    private String responseMessage = "Successful";
+    private String transactionReferenceId = "1";
 
     public OperationStatus getResponseCode() {
         return responseCode;

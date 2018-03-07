@@ -3,11 +3,11 @@ package com.openbanking.api.ng.payload.transaction;
 import com.openbanking.api.ng.definition.OperationStatus;
 
 public class MultipleTransferBankOutput {
-    private String batchId;
-    private OperationStatus responseCode;
-    private String responseMessage;
-    private String numberOfTransaction;
-    private String transactionId;
+    private String batchId = "1";
+    private OperationStatus responseCode = OperationStatus.SUCCESSFUL;
+    private String responseMessage = "Transfer Successful";
+    private String numberOfTransaction = "1";
+    private String transactionId = "1";
 
     public String getBatchId() {
         return batchId;

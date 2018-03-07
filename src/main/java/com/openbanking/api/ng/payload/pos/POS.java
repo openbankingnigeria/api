@@ -5,13 +5,13 @@ import com.openbanking.api.ng.definition.Currency;
 import java.util.Date;
 
 public class POS {
-    private String terminalId;
-    private String merchantId;
-    private String merchantName;
-    private String email;
-    private String phone;
+    private String terminalId = "1";
+    private String merchantId = "1";
+    private String merchantName = "Sodiq Fagbola";
+    private String email = "sodiq@openbanking.com";
+    private String phone = "09000000000";
     private Date dateDeployed;
-    private Currency currency;
+    private Currency currency = Currency.NAIRA;
     private String terminalType;
     private String ptsa;
     private String ptsp;

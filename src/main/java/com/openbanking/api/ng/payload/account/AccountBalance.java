@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class AccountBalance {
-    private String accountNumber;
-    private String accountName;
+    private String accountNumber = "0123456789";;
+    private String accountName = "Sodiq Fagbola";
     private BigDecimal availableBalance;
     private BigDecimal clearedBalance;
     private BigDecimal unClearedBalance;

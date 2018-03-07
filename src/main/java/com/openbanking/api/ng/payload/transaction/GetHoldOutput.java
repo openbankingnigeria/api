@@ -5,6 +5,16 @@ import com.openbanking.api.ng.definition.OperationStatus;
 import java.util.Date;
 
 public class GetHoldOutput {
+
+    private String accountNumber = "0123456789";
+    private String holdReferenceId = "1";
+    private OperationStatus responseCode = OperationStatus.SUCCESSFUL;
+    private String respondeDescription = "Operation Successful";
+    private String amount = "10000";
+    private String reason;
+    private Date startdate;
+    private Date enddate;
+
     public String getAccountNumber() {
         return accountNumber;
     }
@@ -69,12 +79,4 @@ public class GetHoldOutput {
         this.enddate = enddate;
     }
 
-    private String accountNumber;
-    private String holdReferenceId;
-    private OperationStatus responseCode;
-    private String respondeDescription;
-    private String amount;
-    private String reason;
-    private Date startdate;
-    private Date enddate;
 }

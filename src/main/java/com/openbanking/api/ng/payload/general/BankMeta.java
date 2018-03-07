@@ -2,19 +2,19 @@ package com.openbanking.api.ng.payload.general;
 import com.openbanking.api.ng.definition.BankCategory;
 
 public class BankMeta {
-    private String bankName;
-    private String headOfficeAddress;
-    private String swiftCode;
-    private String nibssCode;
-    private String cbnBankCode;
-    private String numberOfBranches;
+    private String bankName = "ABC Bank";
+    private String headOfficeAddress = "No 32, ACB Street";
+    private String swiftCode = "011";
+    private String nibssCode = "012";
+    private String cbnBankCode = "013";
+    private String numberOfBranches = "300";
     private String numberOfCountryCode;
     private String Rc;
     private String incorporationDate;
-    private String customerSupportPhone;
-    private String customerSupportEmail;
-    private String website;
-    private BankCategory bankCategory;
+    private String customerSupportPhone = "090000000000";
+    private String customerSupportEmail = "info@abc.ng";
+    private String website = "www.abc.ng";
+    private BankCategory bankCategory = BankCategory.COMMERCIAL;
 
     public String getBankName() {
         return bankName;

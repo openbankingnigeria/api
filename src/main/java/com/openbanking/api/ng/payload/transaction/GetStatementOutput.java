@@ -94,11 +94,11 @@ public class GetStatementOutput {
         this.bookDate = bookDate;
     }
 
-    private String accountNumber;
+    private String accountNumber = "0123456789";
     private String transactionType;
-    private Currency currency;
+    private Currency currency = Currency.NAIRA;
     private String narration;
-    private String amount;
+    private String amount = "10000";
     private String channel;
     private String debitOrCredit;
     private String referenceId;

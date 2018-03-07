@@ -9,15 +9,15 @@ public class Customer {
 
     private String customerID;
 
-    private String firstName;
+    private String firstName = "Sodiq";
 
-    private String lastName;
+    private String lastName = "Fagbola";
 
-    private String otherNames;
+    private String otherNames = "Damilare";
 
     private String bvn;
 
-    private String email;
+    private String email = "sodiq@openbanking.com";
 
     private int numberOfAccounts;
 
@@ -27,7 +27,7 @@ public class Customer {
 
     private CustomerStatus status;
 
-    private String address;
+    private String address = "Lagos, Nigeria";
 
     public String getFirstName() {
         return firstName;

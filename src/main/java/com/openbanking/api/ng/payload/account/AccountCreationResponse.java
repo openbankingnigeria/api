@@ -1,8 +1,8 @@
 package com.openbanking.api.ng.payload.account;
 
 public class AccountCreationResponse {
-    private String accountNumber;
-    private String customerId;
+    private String accountNumber = "0123456789";
+    private String customerId = "1";
 
     public String getAccountNumber() {
         return accountNumber;
