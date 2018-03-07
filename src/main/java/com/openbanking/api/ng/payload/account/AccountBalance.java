@@ -6,10 +6,10 @@ import java.util.Date;
 public class AccountBalance {
     private String accountNumber = "0123456789";;
     private String accountName = "Sodiq Fagbola";
-    private BigDecimal availableBalance;
-    private BigDecimal clearedBalance;
-    private BigDecimal unClearedBalance;
-    private BigDecimal lienBalance;
+    private BigDecimal availableBalance = new BigDecimal(1000000);
+    private BigDecimal clearedBalance = new BigDecimal(1000000);
+    private BigDecimal unClearedBalance = new BigDecimal(1000000);
+    private BigDecimal lienBalance = new BigDecimal(1000000);
     private Date date;
 
     public String getAccountNumber() {

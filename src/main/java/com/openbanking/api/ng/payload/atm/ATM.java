@@ -10,9 +10,9 @@ public class ATM {
 
     private String atmName;
 
-    private int longitude;
+    private int longitude = 32;
 
-    private int latitude;
+    private int latitude = 67;
 
     private Currency baseCurrency = Currency.NAIRA;
 

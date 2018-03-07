@@ -3,13 +3,13 @@ package com.openbanking.api.ng.payload.card;
 import com.openbanking.api.ng.definition.CardBrand;
 import com.openbanking.api.ng.definition.Currency;
 public class CardType {
-    private CardBrand cardBrand;
-    private String productId;
-    private com.openbanking.api.ng.definition.CardType cardType;
+    private CardBrand cardBrand = CardBrand.MASTER_CARD;
+    private String productId = "1";
+    private com.openbanking.api.ng.definition.CardType cardType = com.openbanking.api.ng.definition.CardType.CREDIT;
     private String productName;
-    private Currency currency;
-    private String purchasePrice;
-    private int validityPeriod;
+    private Currency currency = Currency.NAIRA;
+    private String purchasePrice = "10000";
+    private int validityPeriod = 1;
     public String getProductId() {
         return productId;
     }

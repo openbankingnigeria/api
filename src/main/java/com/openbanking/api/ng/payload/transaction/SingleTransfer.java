@@ -14,17 +14,17 @@ public class SingleTransfer {
     private Currency sourceCurrency = Currency.NAIRA;
     private String sourceNarration = "Single Transfer";
     private BigDecimal amount;
-    private Currency currency;
+    private Currency currency = Currency.NAIRA;
     private String destinationNarration;
     private String transactionFee = "100";
     private String channel;
-    private int latitude;
-    private int longitude;
+    private int latitude = 100;
+    private int longitude = 101;
     private Date transactionDate;
     private PeriodType interval;
     private Date startDate;
     private Date endDate;
-    private int numberOfTime;
+    private int numberOfTime = 1;
 
     public String getSourceAccount() {
         return sourceAccount;

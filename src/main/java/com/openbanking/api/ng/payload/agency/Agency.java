@@ -9,8 +9,8 @@ public class Agency {
     private String street = "Adegbola Street";
     private String city = "Ikoyi";
     private String State = "Lagos";
-    private int latitude;
-    private int longitude;
+    private int latitude = 35;
+    private int longitude = 76;
     private String phoneNumber = "090000000";
     private List<AgencyServiceType> agencyServices;
     public String getAgencyID() {

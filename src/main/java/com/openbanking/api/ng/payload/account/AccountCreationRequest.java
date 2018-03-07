@@ -17,7 +17,7 @@ public class AccountCreationRequest {
     private String localGovernment = "Ikoyi";
     private String country = "Nigeria";
     private String nationality = "Nigerian";
-    private String accountTypeId;
+    private String accountTypeId = "1";
     private String nextOfKinName = "Ajoke Fagbola";
     private String nextOfKinPhone = "0900000000";
     private String nextOfKinEmail = "ajoke@openbanking.com";

@@ -19,14 +19,14 @@ public class Account {
     @ApiModelProperty(value = "The full Name registered with the Account")
     private String fullName = "Sodiq Fagbola";
     private String shortName = "Sodiq";
-    private Currency currency;
+    private Currency currency = Currency.NAIRA;
     private Date accountOpeningDate;
     private Date lastTransactionDate;
-    private String status;
-    private String bankSortCode;
+    private String status = "Successful";
+    private String bankSortCode = "012";
     private String accountBalance = "0123456789";
     private String phoneNumber = "090000000";
-    private AccountType accountType;
+    private AccountType accountType = AccountType.CURRENT;
     private String accountManagerName = "Anaedu Anthony";
     private String accountManagerPhone = "08000000000";
 

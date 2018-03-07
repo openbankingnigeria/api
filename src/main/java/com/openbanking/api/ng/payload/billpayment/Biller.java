@@ -3,13 +3,13 @@ package com.openbanking.api.ng.payload.billpayment;
 import com.openbanking.api.ng.definition.Currency;
 
 public class Biller {
-    private String categoryId;
-    private String billerCategory;
-    private String categoryDescription;
-    private String billerId;
-    private String nameOfBiller;
-    private String customerId;
-    private Currency currency;
+    private String categoryId = "1";
+    private String billerCategory = "Electricity";
+    private String categoryDescription =  "Electricity Token";
+    private String billerId = "1";
+    private String nameOfBiller = "EKDEC";
+    private String customerId = "1";
+    private Currency currency = Currency.NAIRA;
 
     public String getCategoryId() {
         return categoryId;
