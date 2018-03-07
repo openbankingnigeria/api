@@ -51,9 +51,9 @@ public class PlaceHold {
         this.enddate = enddate;
     }
 
-    private String accountNumber;
+    private String accountNumber = "0123456789";
     private String holdReferenceId;
-    private String amount;
+    private String amount = "10000";
     private String reason;
     private Date startdate;
     private Date enddate;

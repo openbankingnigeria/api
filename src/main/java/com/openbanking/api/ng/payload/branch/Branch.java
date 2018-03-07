@@ -2,16 +2,16 @@ package com.openbanking.api.ng.payload.branch;
 import com.openbanking.api.ng.definition.BranchType;
 public class Branch {
 
-   private String  branchId;
-   private String branchName;
+   private String  branchId = "1";
+   private String branchName = "Ikoyi Branch";
    private BranchType branchtype ;
-   private String street;
-   private String city;
-   private String state;
-   private int longitude;
-   private int latitude;
-   private String phoneNumber;
-   private int numberOfATMs;
+   private String street = "Adegbola Street";
+   private String city = "Ikoyi";
+   private String state = "Lagos";
+   private int longitude = 65;
+   private int latitude = 98;
+   private String phoneNumber = "09000000000";
+   private int numberOfATMs = 34;
     public String getBranchId() {
         return branchId;
     }

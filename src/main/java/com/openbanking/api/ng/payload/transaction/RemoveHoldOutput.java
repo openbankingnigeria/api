@@ -19,6 +19,6 @@ public class RemoveHoldOutput {
         this.repsonseMessage = repsonseMessage;
     }
 
-    private OperationStatus responseCode;
-    private String repsonseMessage;
+    private OperationStatus responseCode = OperationStatus.SUCCESSFUL;
+    private String repsonseMessage = "Successful";
 }

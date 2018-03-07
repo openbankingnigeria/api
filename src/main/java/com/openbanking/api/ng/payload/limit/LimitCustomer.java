@@ -5,8 +5,8 @@ import com.openbanking.api.ng.definition.TransactionType;
 
 public class LimitCustomer {
     private String channel;
-    private TransactionType transactionType;
-    private PeriodType periodType;
+    private TransactionType transactionType = TransactionType.DEPOSIT;
+    private PeriodType periodType = PeriodType.DAY;
     private int maxTransaction;
     private String maxAmountPerTransaction;
     private String maxCumulativeAmount;

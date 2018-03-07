@@ -5,10 +5,10 @@ import com.openbanking.api.ng.definition.Currency;
 import java.util.Date;
 
 public class InvestmentBook {
-    private String productId;
-    private String accountNumber;
-    private String amount;
-    private Currency currency;
+    private String productId = "0";
+    private String accountNumber = "0123456789";
+    private String amount = "5400";
+    private Currency currency = Currency.EURO;
     private Date dateBooked;
     private Date maturityDate;
 

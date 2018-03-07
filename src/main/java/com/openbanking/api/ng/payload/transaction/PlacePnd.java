@@ -3,9 +3,9 @@ package com.openbanking.api.ng.payload.transaction;
 import com.openbanking.api.ng.definition.OperationStatus;
 
 public class PlacePnd {
-    private String pndReferenceId;
-    private OperationStatus responseCode;
-    private String responseMessage;
+    private String pndReferenceId = "1";
+    private OperationStatus responseCode = OperationStatus.SUCCESSFUL;
+    private String responseMessage = "Successful";
 
     public String getPndReferenceId() {
         return pndReferenceId;

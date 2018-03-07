@@ -4,15 +4,15 @@ import com.openbanking.api.ng.definition.Currency;
 
 public class ATM {
 
-    private String atmId;
+    private String atmId = "1";
 
-    private String terminalId;
+    private String terminalId = "1";
 
-    private String atmName;
+    private String atmName = "Igbosere ATM";
 
-    private int longitude;
+    private int longitude = 32;
 
-    private int latitude;
+    private int latitude = 67;
 
     private Currency baseCurrency = Currency.NAIRA;
 
