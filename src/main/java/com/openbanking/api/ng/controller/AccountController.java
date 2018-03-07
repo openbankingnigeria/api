@@ -2,22 +2,19 @@ package com.openbanking.api.ng.controller;
 
 import com.openbanking.api.ng.config.AccessScope;
 import com.openbanking.api.ng.definition.OperationStatus;
+import com.openbanking.api.ng.payload.GenericServiceResponse;
+import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
 import com.openbanking.api.ng.payload.account.*;
-import io.github.benas.randombeans.api.EnhancedRandom;
 import io.swagger.annotations.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Collections;
 
 @RestController
 @RequestMapping(value = "/account")
-@Api(value = "Account", description = "Account related operations", consumes = "application/json", produces = "application/json", tags = {"account"},  authorizations = @Authorization(value = "oAuth2", scopes = @AuthorizationScope(scope = AccessScope.READ_ACCOUNT_VALUE, description = "")))
+@Api(value = "Account", description = "Account related operations", consumes = "application/json", produces = "application/json", tags = {"account"}, authorizations = @Authorization(value = "oAuth2", scopes = @AuthorizationScope(scope = AccessScope.READ_ACCOUNT_VALUE, description = "")))
 public class AccountController {
-
-    @Autowired
-    private EnhancedRandom enhancedRandom;
 
     @ApiOperation(value = "Finds an Account by Account Number",
             notes = "Gives general Information about an Account Number",
@@ -25,8 +22,11 @@ public class AccountController {
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Account Number supplied"),
             @ApiResponse(code = 404, message = "Account Not Found"), @ApiResponse(code = 200, response = Account.class, message = "Account Information")})
     @RequestMapping(value = "/{accountNumber}", method = RequestMethod.GET, produces = "application/json")
-    public Account getAccount(@PathVariable @ApiParam(value = "The Account Number", required = true) String accountNumber) {
-        return enhancedRandom.nextObject(Account.class);
+    public ResponseEntity<GenericServiceResponse> getAccount(@PathVariable @ApiParam(value = "The Account Number", required = true) String accountNumber) {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse().withData(new Account())
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage(OperationStatus.SUCCESSFUL.name())
+                .build());
     }
 
     @ApiOperation(value = "Get the balance on the account as at the specified date",
@@ -35,8 +35,11 @@ public class AccountController {
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Account Number supplied"),
             @ApiResponse(code = 404, message = "Account Not Found"), @ApiResponse(code = 200, response = AccountBalance.class, message = "Account Balance Information")})
     @RequestMapping(value = "/balance/{accountNumber}", method = RequestMethod.GET, produces = "application/json")
-    public AccountBalance getAccountBalance(@PathVariable @ApiParam(value = "The Account Number", required = true) String accountNumber, @RequestParam @ApiParam(value = "Date in format (yyyy-mm-dd)") String date) {
-        return enhancedRandom.nextObject(AccountBalance.class);
+    public ResponseEntity<GenericServiceResponse> getAccountBalance(@PathVariable @ApiParam(value = "The Account Number", required = true) String accountNumber, @RequestParam @ApiParam(value = "Date in format (yyyy-mm-dd)") String date) {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse().withData(new AccountBalance())
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage(OperationStatus.SUCCESSFUL.name())
+                .build());
     }
 
     @ApiOperation(value = "Get Accounts by Customer ID",
@@ -45,8 +48,11 @@ public class AccountController {
     @ApiResponses(value = {@ApiResponse(code = 404, message = "No account found with matching the Customer ID provided"),
             @ApiResponse(code = 200, response = Account.class, responseContainer = "List", message = "List of Accounts")})
     @RequestMapping(value = "/customer/{customerId}", method = RequestMethod.GET, produces = "application/json")
-    public List<Account> getAccountByCustomerId(@PathVariable @ApiParam(value = "The Customer ID as defined by Bank", required = true) String customerId) {
-        return enhancedRandom.objects(Account.class, 3).collect(Collectors.toList());
+    public ResponseEntity<GenericServiceResponse> getAccountByCustomerId(@PathVariable @ApiParam(value = "The Customer ID as defined by Bank", required = true) String customerId) {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse().withData(Collections.singletonList(new Account()))
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage(OperationStatus.SUCCESSFUL.name())
+                .build());
     }
 
     @ApiOperation(value = "Get Accounts by BVN",
@@ -55,38 +61,59 @@ public class AccountController {
     @ApiResponses(value = {@ApiResponse(code = 404, message = "No account found with matching the BVN provided"),
             @ApiResponse(code = 200, response = Account.class, responseContainer = "List", message = "List of Accounts")})
     @RequestMapping(value = "/bvn/{bvn}", method = RequestMethod.GET)
-    public List<Account> getAccountByCustomerBvn(@PathVariable @ApiParam(value = "The Customer's BVN", required = true) String bvn) {
-        return enhancedRandom.objects(Account.class, 3).collect(Collectors.toList());
+    public ResponseEntity<GenericServiceResponse> getAccountByCustomerBvn(@PathVariable @ApiParam(value = "The Customer's BVN", required = true) String bvn) {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse().withData(Collections.singletonList(new Account()))
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage(OperationStatus.SUCCESSFUL.name())
+                .build());
     }
 
     @RequestMapping(value = "/phone/{phoneNumber}", method = RequestMethod.GET)
-    public List<Account> getAccountByPhone(@PathVariable @ApiParam(value = "The Customer's Phone Number Ex: +234 ...") String phoneNumber) {
-        return enhancedRandom.objects(Account.class, 3).collect(Collectors.toList());
+    public ResponseEntity<GenericServiceResponse> getAccountsByPhone(@PathVariable @ApiParam(value = "The Customer's Phone Number Ex: +234 ...") String phoneNumber) {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse().withData(Collections.singletonList(new Account()))
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage(OperationStatus.SUCCESSFUL.name())
+                .build());
     }
 
     @RequestMapping(value = "/email/{emailAddress}", method = RequestMethod.GET)
-    public List<Account> getAccountByEmail(@PathVariable @ApiParam(value = "The Customer's Email Address") String emailAddress) {
-        return enhancedRandom.objects(Account.class, 3).collect(Collectors.toList());
+    public ResponseEntity<GenericServiceResponse> getAccountsByEmail(@PathVariable @ApiParam(value = "The Customer's Email Address") String emailAddress) {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse().withData(Collections.singletonList(new Account()))
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage(OperationStatus.SUCCESSFUL.name())
+                .build());
     }
 
     @RequestMapping(value = "/{accountNumber}", method = RequestMethod.POST)
-    public OperationStatus updateAccount(@PathVariable @ApiParam(value = "The Customer's Phone Number Ex: +234 ...") String accountNumber) {
-        return OperationStatus.SUCCESSFUL;
+    public ResponseEntity<GenericServiceResponse> updateAccount(@PathVariable @ApiParam(value = "The Customer's Phone Number Ex: +234 ...") String accountNumber) {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage("Account updated successfully")
+                .build());
     }
 
     @RequestMapping(value = "/block/{accountNumber}", method = RequestMethod.POST)
-    public OperationStatus blockAccount(@PathVariable @RequestBody AccountBlock accountBlock) {
-        return OperationStatus.SUCCESSFUL;
+    public ResponseEntity<GenericServiceResponse> blockAccount(@PathVariable @RequestBody AccountBlock accountBlock) {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage("Account blocked successfully")
+                .build());
     }
 
     @RequestMapping(value = "/types", method = RequestMethod.GET)
-    public List<AccountType> getAccountType() {
-        return enhancedRandom.objects(AccountType.class, 3).collect(Collectors.toList());
+    public ResponseEntity<GenericServiceResponse> getAccountType() {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse().withData(Collections.singletonList(new AccountType()))
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage(OperationStatus.SUCCESSFUL.name())
+                .build());
 
     }
 
     @RequestMapping(value = "/open", method = RequestMethod.PUT, produces = "application/json")
-    public AccountCreationResponse openAccount(@RequestBody AccountCreationRequest accountCreationRequest) {
-        return enhancedRandom.nextObject(AccountCreationResponse.class);
+    public ResponseEntity<GenericServiceResponse> openAccount(@RequestBody AccountCreationRequest accountCreationRequest) {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse().withData(new AccountCreationResponse())
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage("Account opened successfully")
+                .build());
     }
 }
