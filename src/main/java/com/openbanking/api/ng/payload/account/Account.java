@@ -17,7 +17,7 @@ public class Account {
     private String bvn;
 
     @ApiModelProperty(value = "The full Name registered with the Account")
-    private String fullName;
+    private String fullName = "";
     private String shortName;
     private Currency currency;
     private Date accountOpeningDate;
