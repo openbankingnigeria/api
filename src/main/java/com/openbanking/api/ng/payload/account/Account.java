@@ -16,10 +16,10 @@ public class Account {
     @ApiModelProperty(value = "The BVN tied to the Account")
     private String bvn = "";
 
-    @ApiModelProperty(value = "The full Name registered with the Account")
+    @ApiModelProperty(value = "The full Name registered with the Account") 
     private String fullName = "Sodiq Fagbola";
     private String shortName = "Sodiq";
-    private Currency currency = Currency.NAIRA;
+    private Currency currency = Currency.NAIRA;  
     private Date accountOpeningDate;
     private Date lastTransactionDate;
     private String status = "Successful";
