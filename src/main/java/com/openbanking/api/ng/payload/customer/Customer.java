@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Customer {
 
-    private String customerID;
+    private String customerID = "1";
 
     private String firstName = "Sodiq";
 
@@ -15,17 +15,17 @@ public class Customer {
 
     private String otherNames = "Damilare";
 
-    private String bvn;
+    private String bvn = "8272918279";
 
     private String email = "sodiq@openbanking.com";
 
-    private int numberOfAccounts;
+    private int numberOfAccounts = 1;
 
-    private CustomerType type;
+    private CustomerType type = CustomerType.CORPORATE;
 
     private Date startDateOfRelationship;
 
-    private CustomerStatus status;
+    private CustomerStatus status = CustomerStatus.ACTIVE;
 
     private String address = "Lagos, Nigeria";
 

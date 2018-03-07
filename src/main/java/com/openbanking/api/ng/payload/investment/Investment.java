@@ -5,14 +5,14 @@ import com.openbanking.api.ng.definition.InvestmentBookingType;
 
 import java.util.Date;
 public class Investment {
-    private String investmentId;
-    private String productId;
-    private String accountNumber;
-    private String amount;
-    private Currency currency;
+    private String investmentId = "1";
+    private String productId = "1";
+    private String accountNumber = "0123456780";
+    private String amount = "5900";
+    private Currency currency = Currency.EURO;
     private Date dateBooked;
     private Date maturityDate;
-    private InvestmentBookingType bookingType;
+    private InvestmentBookingType bookingType = InvestmentBookingType.DISCOUNTED;
     private String interestDiscountRate;
 
     public String getInvestmentId() {

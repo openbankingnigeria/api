@@ -16,8 +16,8 @@ public class POS {
     private String ptsa;
     private String ptsp;
     private String status;
-    private int latitude;
-    private int longitude;
+    private int latitude = 100;
+    private int longitude = 19;
 
     public String getTerminalId() {
         return terminalId;

@@ -6,7 +6,7 @@ import com.openbanking.api.ng.definition.Currency;
 import java.util.Date;
 
 public class DirectDebitSetup {
-    private String referenceId;
+    private String referenceId = "1";
     private String sourceAccount = "0123456789";
     private String sourceAccountName = "Sodiq Fagbola";
     private String sourceEmail = "sodiq@openbanking.com";
@@ -15,11 +15,11 @@ public class DirectDebitSetup {
     private String sourceAmount = "10000";
     private Currency sourceCurrency = Currency.NAIRA;
     private String sourceNation = "Nigeria";
-    private String sourceNarration;
-    private String destinationBankCode;
-    private String merchantId;
-    private String productName;
-    private String merchantAccount;
+    private String sourceNarration = "Transfer";
+    private String destinationBankCode = "012";
+    private String merchantId = "1";
+    private String productName = "Laptio";
+    private String merchantAccount = "0123456789";
     private String merchantAccountName = "Seun Ogunjimi";
     private String merchantEmail = "seun@openbanking.com";
     private String merchantPhone = "09000000000";
@@ -35,8 +35,8 @@ public class DirectDebitSetup {
     private String recurringPeriod;
     private String transactionFee;
     private ChannelType channel;
-    private int latitude;
-    private int longitude;
+    private int latitude = 12;
+    private int longitude = 82;
 
     public ChannelType getChannel() {
         return channel;

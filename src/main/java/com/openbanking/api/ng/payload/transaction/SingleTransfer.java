@@ -13,7 +13,7 @@ public class SingleTransfer {
     private String sourceAmount = "100000";
     private Currency sourceCurrency = Currency.NAIRA;
     private String sourceNarration = "Single Transfer";
-    private BigDecimal amount;
+    private BigDecimal amount = new BigDecimal(1000000);
     private Currency currency = Currency.NAIRA;
     private String destinationNarration;
     private String transactionFee = "100";
