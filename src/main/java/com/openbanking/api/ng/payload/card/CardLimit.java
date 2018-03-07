@@ -3,14 +3,14 @@ package com.openbanking.api.ng.payload.card;
 public class CardLimit {
     private String cardToken;
     private String Channel;
-    private CardType cardType;
-    private String transactionType;
+    private CardType cardType = new CardType();
+    private String transactionType = "";
     private String periodType;
-    private int maximumTransaction;
-    private String maxAmountPerTransaction;
-    private String maxCumulativeAmount;
-    private String outstandingTransaction;
-    private String outstandingCumulativeAmount;
+    private int maximumTransaction = 1;
+    private String maxAmountPerTransaction = "100000";
+    private String maxCumulativeAmount = "1000000";
+    private String outstandingTransaction = "1000000";
+    private String outstandingCumulativeAmount = "10000";
 
     public String getCardToken() {
         return cardToken;

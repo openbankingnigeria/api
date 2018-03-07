@@ -8,27 +8,27 @@ import java.util.Date;
 
 public class Account {
     @ApiModelProperty(value = "10 digit NUBAN")
-    private String accountNumber;
+    private String accountNumber = "012345678";
 
     @ApiModelProperty(value = "The Customer ID as defined by the Bank")
     private String customerId;
 
     @ApiModelProperty(value = "The BVN tied to the Account")
-    private String bvn;
+    private String bvn = "";
 
-    @ApiModelProperty(value = "The full Name registered with the Account")
-    private String fullName = "";
-    private String shortName;
-    private Currency currency;
+    @ApiModelProperty(value = "The full Name registered with the Account") 
+    private String fullName = "Sodiq Fagbola";
+    private String shortName = "Sodiq";
+    private Currency currency = Currency.NAIRA;  
     private Date accountOpeningDate;
     private Date lastTransactionDate;
-    private String status;
-    private String bankSortCode;
-    private String accountBalance;
-    private String phoneNumber;
-    private AccountType accountType;
-    private String accountManagerName;
-    private String accountManagerPhone;
+    private String status = "Successful";
+    private String bankSortCode = "012";
+    private String accountBalance = "0123456789";
+    private String phoneNumber = "090000000";
+    private AccountType accountType = AccountType.CURRENT;
+    private String accountManagerName = "Anaedu Anthony";
+    private String accountManagerPhone = "08000000000";
 
     public String getAccountNumber() {
         return accountNumber;

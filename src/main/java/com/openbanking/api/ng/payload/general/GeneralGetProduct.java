@@ -3,11 +3,11 @@ package com.openbanking.api.ng.payload.general;
 import com.openbanking.api.ng.definition.Currency;
 
 public class GeneralGetProduct {
-    private String productId;
-    private String Name;
-    private String description;
+    private String productId = "1";
+    private String Name = "Laptop";
+    private String description = "Macbook Pro";
     private String eligibility;
-    private Currency currency;
+    private Currency currency = Currency.EURO;
 
     public String getProductId() {
         return productId;

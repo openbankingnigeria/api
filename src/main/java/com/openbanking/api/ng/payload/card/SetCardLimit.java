@@ -7,8 +7,8 @@ import java.util.List;
 public class SetCardLimit {
     private List<ChannelType> channelType;
     private String channel;
-    private String transactionType;
-    private PeriodType periodType;
+    private String transactionType = "Payment";
+    private PeriodType periodType = PeriodType.DAY;
 
     public void setChannelType(List<ChannelType> channelType) {
         this.channelType = channelType;

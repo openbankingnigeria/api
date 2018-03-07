@@ -1,7 +1,7 @@
 package com.openbanking.api.ng.payload.billpayment;
 
 public class BillingSystem {
-    private String billingSystemId;
+    private String billingSystemId = "1";
     private BillingSystem billingSystemName;
 
     public String getBillingSystemId() {

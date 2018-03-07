@@ -7,24 +7,24 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class SingleTransfer {
-    private String referenceId;
-    private String sourceAccount;
-    private String sourceAccountName;
-    private String sourceAmount;
-    private Currency sourceCurrency;
-    private String sourceNarration;
-    private BigDecimal amount;
-    private Currency currency;
+    private String referenceId = "1";
+    private String sourceAccount = "0123456789";
+    private String sourceAccountName = "Sodiq Fagbola";
+    private String sourceAmount = "100000";
+    private Currency sourceCurrency = Currency.NAIRA;
+    private String sourceNarration = "Single Transfer";
+    private BigDecimal amount = new BigDecimal(1000000);
+    private Currency currency = Currency.NAIRA;
     private String destinationNarration;
-    private String transactionFee;
+    private String transactionFee = "100";
     private String channel;
-    private int latitude;
-    private int longitude;
+    private int latitude = 100;
+    private int longitude = 101;
     private Date transactionDate;
     private PeriodType interval;
     private Date startDate;
     private Date endDate;
-    private int numberOfTime;
+    private int numberOfTime = 1;
 
     public String getSourceAccount() {
         return sourceAccount;

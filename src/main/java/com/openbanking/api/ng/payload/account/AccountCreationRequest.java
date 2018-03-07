@@ -3,26 +3,26 @@ package com.openbanking.api.ng.payload.account;
 import java.util.Date;
 
 public class AccountCreationRequest {
-    private String customerId;
-    private String accountName;
-    private String firstName;
-    private String surName;
-    private String otherName;
-    private Date dateOfBirth;
-    private String bvn;
-    private String phone;
-    private String email;
-    private String address;
-    private String city;
-    private String localGovernment;
-    private String country;
-    private String nationality;
-    private String accountTypeId;
-    private String nextOfKinName;
-    private String nextOfKinPhone;
-    private String nextOfKinEmail;
-    private String nextOfKinAddress;
-    private String nextOfKinRelationship;
+    private String customerId = "1";
+    private String accountName = "Sodiq Fagbola";
+    private String firstName = "Sodiq";
+    private String surName = "Fagbola";
+    private String otherName = "Damilare";
+    private Date dateOfBirth = new Date();
+    private String bvn  = "0123456789";
+    private String phone = "0900000000";
+    private String email = "sodiq@openbanking.com";
+    private String address = "Lagos, Nigeria";
+    private String city = "Lagos";
+    private String localGovernment = "Ikoyi";
+    private String country = "Nigeria";
+    private String nationality = "Nigerian";
+    private String accountTypeId = "1";
+    private String nextOfKinName = "Ajoke Fagbola";
+    private String nextOfKinPhone = "0900000000";
+    private String nextOfKinEmail = "ajoke@openbanking.com";
+    private String nextOfKinAddress = "Lagos, Nigeria";
+    private String nextOfKinRelationship = "Wife";
 
     public String getCustomerId() {
         return customerId;

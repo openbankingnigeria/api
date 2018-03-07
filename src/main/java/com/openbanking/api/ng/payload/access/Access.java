@@ -4,7 +4,7 @@ import java.util.Timer;
 public class Access {
     private String accessToken;
     private Timer expirationTime;
-    private String tokenType;
+    private String tokenType = "Soft Token";
 
     public String getAccessToken() {
         return accessToken;

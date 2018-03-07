@@ -1,7 +1,7 @@
 package com.openbanking.api.ng.payload.transaction;
 
 public class GetStatement {
-    private String accountNumber;
+    private String accountNumber = "0123456789";
     private String startDateAndendDate_Or_lastNumberOfRecords;
 
     public String getStartDateAndendDate_Or_lastNumberOfRecords() {

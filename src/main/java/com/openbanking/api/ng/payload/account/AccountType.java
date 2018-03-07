@@ -3,16 +3,16 @@ package com.openbanking.api.ng.payload.account;
 import com.openbanking.api.ng.definition.Currency;
 
 public class AccountType {
-    private String accountTypeId;
-    private String accountTypeName;
-    private String minimumBalance;
-    private String maximumBalance;
-    private String maximumTransactionLimit;
+    private String accountTypeId = "1";
+    private String accountTypeName = "Savings";
+    private String minimumBalance = "1000";
+    private String maximumBalance = "1000000";
+    private String maximumTransactionLimit = "10000";
     private String maximumInFlow;
     private Currency currency;
     private String  kycLevel;
     private String  documentation;
-    private String  cardProduct;
+    private String  cardProduct = "Master Card";
     private String  digitalProduct;
 
     public String getAccountTypeId() {
