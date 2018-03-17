@@ -1,16 +1,19 @@
 package com.openbanking.api.ng.controller;
 
+import com.openbanking.api.ng.definition.OperationStatus;
+import com.openbanking.api.ng.payload.GenericServiceResponse;
+import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
 import com.openbanking.api.ng.payload.general.BankMeta;
 import com.openbanking.api.ng.payload.general.GeneralCharges;
 import com.openbanking.api.ng.payload.general.GeneralGetProduct;
 import com.openbanking.api.ng.payload.general.GeneralInterfaceVersion;
 import io.swagger.annotations.Api;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
-import java.util.List;
 
 @RestController
 @RequestMapping("/general")
@@ -18,23 +21,39 @@ import java.util.List;
 public class GeneralController {
 
     @RequestMapping(value = "/information/version", method = RequestMethod.GET)
-    public GeneralInterfaceVersion getInterfaceVersion() {
-        return new GeneralInterfaceVersion();
+    public ResponseEntity<GenericServiceResponse> getInterfaceVersion() {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
+                .withData(new GeneralInterfaceVersion())
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage(OperationStatus.SUCCESSFUL.name())
+                .build());
     }
 
     @RequestMapping(value = "/information", method = RequestMethod.GET)
-    public BankMeta getBankMeta() {
-        return new BankMeta();
+    public ResponseEntity<GenericServiceResponse> getBankMeta() {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
+                .withData(new BankMeta())
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage(OperationStatus.SUCCESSFUL.name())
+                .build());
     }
 
     @RequestMapping(value = "/transaction/charges", method = RequestMethod.GET)
-    public List<GeneralCharges> getCharges() {
-        return Collections.singletonList(new GeneralCharges());
+    public ResponseEntity<GenericServiceResponse> getCharges() {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
+                .withData(Collections.singletonList(new GeneralCharges()))
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage(OperationStatus.SUCCESSFUL.name())
+                .build());
     }
 
     @RequestMapping(value = "/products", method = RequestMethod.GET)
-    public List<GeneralGetProduct> getProducts() {
-        return Collections.singletonList(new GeneralGetProduct());
+    public ResponseEntity<GenericServiceResponse> getProducts() {
+        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
+                .withData(Collections.singletonList(new GeneralGetProduct()))
+                .withStatus(OperationStatus.SUCCESSFUL)
+                .withMessage(OperationStatus.SUCCESSFUL.name())
+                .build());
     }
 
 }

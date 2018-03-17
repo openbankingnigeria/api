@@ -1,4 +1,5 @@
 package com.openbanking.api.ng.payload.limit;
+
 import com.openbanking.api.ng.definition.PeriodType;
 import com.openbanking.api.ng.definition.TransactionType;
 
