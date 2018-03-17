@@ -16,8 +16,8 @@ public class POS {
     private String ptsa;
     private String ptsp;
     private String status;
-    private int latitude = 100;
-    private int longitude = 19;
+    private double latitude = 100;
+    private double longitude = 19;
 
     public String getTerminalId() {
         return terminalId;
@@ -107,19 +107,19 @@ public class POS {
         this.status = status;
     }
 
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 }

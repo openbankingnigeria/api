@@ -41,8 +41,8 @@ public class POSController {
     }
 
     @RequestMapping(value = "/latitude/{latitude}/longitude/{longitude}", method = RequestMethod.GET)
-    public List<POS> getPosNearLocation(@PathVariable @ApiParam(value = "The location's latitude") int latitude,
-                                        @PathVariable @ApiParam(value = "The location's longitude") int longitude) {
+    public List<POS> getPosNearLocation(@PathVariable @ApiParam(value = "The location's latitude") double latitude,
+                                        @PathVariable @ApiParam(value = "The location's longitude") double longitude) {
         return Collections.nCopies(3, new POS());
     }
 }

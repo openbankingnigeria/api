@@ -10,9 +10,9 @@ public class ATM {
 
     private String atmName = "Igbosere ATM";
 
-    private int longitude = 32;
+    private double longitude = 32;
 
-    private int latitude = 67;
+    private double latitude = 67;
 
     private Currency baseCurrency = Currency.NAIRA;
 
@@ -40,19 +40,19 @@ public class ATM {
         this.atmName = atmName;
     }
 
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 

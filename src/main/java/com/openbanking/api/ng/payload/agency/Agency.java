@@ -9,8 +9,8 @@ public class Agency {
     private String street = "Adegbola Street";
     private String city = "Ikoyi";
     private String State = "Lagos";
-    private int latitude = 35;
-    private int longitude = 76;
+    private double latitude = 35;
+    private double longitude = 76;
     private String phoneNumber = "090000000";
     private List<AgencyServiceType> agencyServices;
     public String getAgencyID() {
@@ -61,19 +61,19 @@ public class Agency {
         State = state;
     }
 
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 

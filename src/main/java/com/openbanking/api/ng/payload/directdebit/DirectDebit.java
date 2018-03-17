@@ -36,8 +36,8 @@ public class DirectDebit {
     private String recurringPeriod;
     private String transactionFee = "100";
     private ChannelType channel;
-    private int latitude = 192;
-    private int longitude = 61;
+    private double latitude = 192;
+    private double longitude = 61;
 
     public String getStatus() {
         return status;
@@ -279,19 +279,19 @@ public class DirectDebit {
         this.channel = channel;
     }
 
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 }

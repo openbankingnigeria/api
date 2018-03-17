@@ -8,8 +8,8 @@ public class Branch {
    private String street = "Adegbola Street";
    private String city = "Ikoyi";
    private String state = "Lagos";
-   private int longitude = 65;
-   private int latitude = 98;
+   private double longitude = 65;
+   private double latitude = 98;
    private String phoneNumber = "09000000000";
    private int numberOfATMs = 34;
     public String getBranchId() {
@@ -59,19 +59,19 @@ public class Branch {
         this.state = state;
     }
 
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
