@@ -29,7 +29,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         http
                 .antMatcher("/**")
                 .authorizeRequests()
-                .antMatchers("/configuration/ui","/webjars/**","/swagger-ui.html","/swagger-resources/**","/configuration/security","/v2/api-docs")
+                .antMatchers("/","/configuration/ui","/webjars/**","/swagger-ui.html","/swagger-resources/**","/configuration/security","/v2/api-docs")
                 .permitAll()
                 .anyRequest()
                 .authenticated();

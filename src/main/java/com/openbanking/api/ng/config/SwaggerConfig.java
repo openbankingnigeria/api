@@ -32,7 +32,6 @@ public class SwaggerConfig {
     @Bean
     public Docket api(ApiInfo apiInfo) {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("oauth")
                 .securitySchemes(securitySchema()).securityContexts(Arrays.asList(securityContext()))
                 .select()
                 .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
