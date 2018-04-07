@@ -32,12 +32,12 @@ public class SwaggerConfig {
     @Bean
     public Docket api(ApiInfo apiInfo) {
         return new Docket(DocumentationType.SWAGGER_2)
-                .securitySchemes(securitySchema()).securityContexts(Arrays.asList(securityContext()))
+                //.securitySchemes(securitySchema()).securityContexts(Arrays.asList(securityContext()))
                 .select()
                 .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
                 .paths(PathSelectors.any())
                 .build()
-                .apiInfo(apiInfo).securitySchemes(securitySchema());
+                .apiInfo(apiInfo);
     }
 
     @Bean

@@ -13,12 +13,12 @@ import java.util.Collections;
 
 @RestController
 @RequestMapping(value = "/account")
-@Api(value = "Account", description = "Account related operations", consumes = "application/json", produces = "application/json", tags = {"account"}, authorizations = @Authorization(value = "oAuth2", scopes = @AuthorizationScope(scope = AccessScope.READ_ACCOUNT_VALUE, description = "")))
+@Api(value = "Account", description = "Account related operations", consumes = "application/json", produces = "application/json", tags = {"account"})
 public class AccountController {
 
     @ApiOperation(value = "Finds an Account by Account Number",
             notes = "Gives general Information about an Account Number",
-            response = Account.class, nickname = "Get a single Account", authorizations = @Authorization(value = "oAuth2", scopes = @AuthorizationScope(scope = "read", description = "")))
+            response = Account.class, nickname = "Get a single Account")
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Account Number supplied"),
             @ApiResponse(code = 404, message = "Account Not Found"), @ApiResponse(code = 200, response = Account.class, message = "Account Information")})
     @RequestMapping(value = "/{accountNumber}", method = RequestMethod.GET, produces = "application/json")
@@ -31,7 +31,7 @@ public class AccountController {
 
     @ApiOperation(value = "Get the balance on the account as at the specified date",
             notes = "Get the balance on the account as at the specified date",
-            response = AccountBalance.class, nickname = "Get account balance", authorizations = @Authorization(value = "oAuth2", scopes = @AuthorizationScope(scope = "read", description = "")))
+            response = AccountBalance.class, nickname = "Get account balance")
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Account Number supplied"),
             @ApiResponse(code = 404, message = "Account Not Found"), @ApiResponse(code = 200, response = AccountBalance.class, message = "Account Balance Information")})
     @RequestMapping(value = "/balance/{accountNumber}", method = RequestMethod.GET, produces = "application/json")
@@ -44,7 +44,7 @@ public class AccountController {
 
     @ApiOperation(value = "Get Accounts by Customer ID",
             notes = "This endpoint allows you to get all the accounts associated with a Customer ID. It takes a Customer ID as an input and returns a list of all the accounts matching that Customer ID",
-            response = Account.class, responseContainer = "List", nickname = "Get Accounts By Customer ID", authorizations = @Authorization(value = "oAuth2", scopes = @AuthorizationScope(scope = "read", description = "")))
+            response = Account.class, responseContainer = "List", nickname = "Get Accounts By Customer ID")
     @ApiResponses(value = {@ApiResponse(code = 404, message = "No account found with matching the Customer ID provided"),
             @ApiResponse(code = 200, response = Account.class, responseContainer = "List", message = "List of Accounts")})
     @RequestMapping(value = "/customer/{customerId}", method = RequestMethod.GET, produces = "application/json")
@@ -57,7 +57,7 @@ public class AccountController {
 
     @ApiOperation(value = "Get Accounts by BVN",
             notes = "This endpoint allows you to get all the accounts associated with a BVN. It takes a BVN as an input and returns a list of all the accounts matching that BVN",
-            response = Account.class, responseContainer = "List", nickname = "Get Accounts By BVN", authorizations = @Authorization(value = "oAuth2", scopes = @AuthorizationScope(scope = AccessScope.READ_ACCOUNT_VALUE, description = "")))
+            response = Account.class, responseContainer = "List", nickname = "Get Accounts By BVN"/*, authorizations = @Authorization(value = "oAuth2", scopes = @AuthorizationScope(scope = AccessScope.READ_ACCOUNT_VALUE, description = ""))*/)
     @ApiResponses(value = {@ApiResponse(code = 404, message = "No account found with matching the BVN provided"),
             @ApiResponse(code = 200, response = Account.class, responseContainer = "List", message = "List of Accounts")})
     @RequestMapping(value = "/bvn/{bvn}", method = RequestMethod.GET)
@@ -92,8 +92,8 @@ public class AccountController {
                 .build());
     }
 
-    @RequestMapping(value = "/block/{accountNumber}", method = RequestMethod.POST)
-    public ResponseEntity<GenericServiceResponse> blockAccount(@PathVariable @RequestBody AccountBlock accountBlock) {
+    @RequestMapping(value = "/block", method = RequestMethod.POST)
+    public ResponseEntity<GenericServiceResponse> blockAccount(@RequestBody AccountBlock accountBlock) {
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
                 .withStatus(OperationStatus.SUCCESSFUL)
                 .withMessage("Account blocked successfully")

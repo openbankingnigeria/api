@@ -14,8 +14,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 
-@Configuration
-@EnableAuthorizationServer
+//@Configuration
+//@EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     public static final String SERVER_RESOURCE_ID="resource";
@@ -44,6 +44,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory().withClient("gigy").secret("secret").accessTokenValiditySeconds(expiration)
-                .scopes("read", "write", "vendorExtensions").authorizedGrantTypes("password", "refresh_token").resourceIds(SERVER_RESOURCE_ID);
+                .scopes("read", "write").authorizedGrantTypes("password", "refresh_token").resourceIds(SERVER_RESOURCE_ID);
     }
 }

@@ -5,12 +5,12 @@ import java.util.Date;
 
 public class AccountBalance {
     private String accountNumber = "0123456789";;
-    private String accountName = "Sodiq Fagbola";
+    private String accountName = "Adamu Alliu";
     private BigDecimal availableBalance = new BigDecimal(1000000);
     private BigDecimal clearedBalance = new BigDecimal(1000000);
     private BigDecimal unClearedBalance = new BigDecimal(1000000);
     private BigDecimal lienBalance = new BigDecimal(1000000);
-    private Date date;
+    private Date date = new Date();
 
     public String getAccountNumber() {
         return accountNumber;
