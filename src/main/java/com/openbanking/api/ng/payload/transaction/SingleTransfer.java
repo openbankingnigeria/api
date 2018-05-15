@@ -1,20 +1,22 @@
 package com.openbanking.api.ng.payload.transaction;
 
-import com.openbanking.api.ng.definition.Currency;
 import com.openbanking.api.ng.definition.PeriodType;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
+
 public class SingleTransfer {
     private String referenceId = "1";
     private String sourceAccount = "0123456789";
     private String sourceAccountName = "Sodiq Fagbola";
-    private String sourceAmount = "100000";
-    private Currency sourceCurrency = Currency.NAIRA;
+    private String sourceAmount = "100000"; // TODO use MonetaryAmount
+    private CurrencyUnit sourceCurrency = Monetary.getCurrency("NGN");
     private String sourceNarration = "Single Transfer";
-    private BigDecimal amount = new BigDecimal(1000000);
-    private Currency currency = Currency.NAIRA;
+    private BigDecimal amount = new BigDecimal(1000000); // TODO use MonetaryAmount
+    private CurrencyUnit currency = Monetary.getCurrency("NGN");
     private String destinationNarration;
     private String transactionFee = "100";
     private String channel;
@@ -51,11 +53,11 @@ public class SingleTransfer {
     }
 
 
-    public Currency getCurrency() {
+    public CurrencyUnit getCurrency() {
         return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(CurrencyUnit currency) {
         this.currency = currency;
     }
 
@@ -139,11 +141,11 @@ public class SingleTransfer {
         this.referenceId = referenceId;
     }
 
-    public Currency getSourceCurrency() {
+    public CurrencyUnit getSourceCurrency() {
         return sourceCurrency;
     }
 
-    public void setSourceCurrency(Currency sourceCurrency) {
+    public void setSourceCurrency(CurrencyUnit sourceCurrency) {
         this.sourceCurrency = sourceCurrency;
     }
 

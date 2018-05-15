@@ -1,8 +1,10 @@
 package com.openbanking.api.ng.payload.transaction;
 
-import com.openbanking.api.ng.definition.Currency;
-
 import java.util.Date;
+
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
+
 import java.sql.Time;
 
 public class GetStatementOutput {
@@ -22,11 +24,11 @@ public class GetStatementOutput {
         this.transactionType = transactionType;
     }
 
-    public Currency getCurrency() {
+    public CurrencyUnit getCurrency() {
         return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(CurrencyUnit currency) {
         this.currency = currency;
     }
 
@@ -96,9 +98,9 @@ public class GetStatementOutput {
 
     private String accountNumber = "0123456789";
     private String transactionType;
-    private Currency currency = Currency.NAIRA;
+    private CurrencyUnit currency = Monetary.getCurrency("NGN");
     private String narration = "Transfer";
-    private String amount = "10000";
+    private String amount = "10000"; // TODO use MonetaryAmount
     private String channel;
     private String debitOrCredit;
     private String referenceId = "1";

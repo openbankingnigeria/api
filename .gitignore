@@ -2,3 +2,6 @@
 /.idea/
 /target/
 api-ng.iml
+/.settings/
+/.classpath
+/.project

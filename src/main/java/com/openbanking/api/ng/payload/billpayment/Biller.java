@@ -1,6 +1,7 @@
 package com.openbanking.api.ng.payload.billpayment;
 
-import com.openbanking.api.ng.definition.Currency;
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
 
 public class Biller {
     private String categoryId = "1";
@@ -9,7 +10,7 @@ public class Biller {
     private String billerId = "1";
     private String nameOfBiller = "EKDEC";
     private String customerId = "1";
-    private Currency currency = Currency.NAIRA;
+    private CurrencyUnit currency = Monetary.getCurrency("NGN");
 
     public String getCategoryId() {
         return categoryId;
@@ -59,11 +60,11 @@ public class Biller {
         this.customerId = customerId;
     }
 
-    public Currency getCurrency() {
+    public CurrencyUnit getCurrency() {
         return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(CurrencyUnit currency) {
         this.currency = currency;
     }
 }

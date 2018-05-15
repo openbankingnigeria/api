@@ -1,9 +1,11 @@
 package com.openbanking.api.ng.payload.directdebit;
 
 import com.openbanking.api.ng.definition.ChannelType;
-import com.openbanking.api.ng.definition.Currency;
 
 import java.util.Date;
+
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
 
 public class DirectDebit {
     private String status = "Successful";
@@ -14,7 +16,7 @@ public class DirectDebit {
     private String sourcePhone = "09000000000";
     private String sourceBvn = "0000000000";
     private String sourceAmount = "100000";
-    private Currency sourceCurrency = Currency.NAIRA;
+    private CurrencyUnit sourceCurrency = Monetary.getCurrency("NGN");;
     private String sourceNation = "Nigeria";
     private String sourceNarration = "Payment";
     private String destinationBankCode = "012";
@@ -26,7 +28,7 @@ public class DirectDebit {
     private String merchantPhone = "09000000000";
     private String merchantBvn = "9817281762";
     private String amount = "1000";
-    private Currency currency = Currency.EURO;
+    private CurrencyUnit currency = Monetary.getCurrency("EUR");
     private String minimumAmount = "1000";
     private String maximumAmount = "200000";
     private int numberOfTransactions;
@@ -103,11 +105,11 @@ public class DirectDebit {
         this.sourceAmount = sourceAmount;
     }
 
-    public Currency getSourceCurrency() {
+    public CurrencyUnit getSourceCurrency() {
         return sourceCurrency;
     }
 
-    public void setSourceCurrency(Currency sourceCurrency) {
+    public void setSourceCurrency(CurrencyUnit sourceCurrency) {
         this.sourceCurrency = sourceCurrency;
     }
 
@@ -199,11 +201,11 @@ public class DirectDebit {
         this.amount = amount;
     }
 
-    public Currency getCurrency() {
+    public CurrencyUnit getCurrency() {
         return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(CurrencyUnit currency) {
         this.currency = currency;
     }
 

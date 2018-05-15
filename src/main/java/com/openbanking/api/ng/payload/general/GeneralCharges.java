@@ -1,6 +1,8 @@
 package com.openbanking.api.ng.payload.general;
 
-import com.openbanking.api.ng.definition.Currency;
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
+
 import com.openbanking.api.ng.definition.TransactionType;
 
 public class GeneralCharges {
@@ -14,7 +16,7 @@ public class GeneralCharges {
     private String maximumCharge;
     private String MaximumChargeType;
     private String taxRate;
-    private Currency currency = Currency.EURO;
+    private CurrencyUnit currency = Monetary.getCurrency("EUR");
 
     public String getProductName() {
         return productName;
@@ -96,11 +98,11 @@ public class GeneralCharges {
         this.taxRate = taxRate;
     }
 
-    public Currency getCurrency() {
+    public CurrencyUnit getCurrency() {
         return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(CurrencyUnit currency) {
         this.currency = currency;
     }
 }

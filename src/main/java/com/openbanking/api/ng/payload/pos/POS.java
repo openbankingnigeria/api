@@ -1,8 +1,9 @@
 package com.openbanking.api.ng.payload.pos;
 
-import com.openbanking.api.ng.definition.Currency;
-
 import java.util.Date;
+
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
 
 public class POS {
     private String terminalId = "1";
@@ -11,7 +12,7 @@ public class POS {
     private String email = "sodiq@openbanking.com";
     private String phone = "09000000000";
     private Date dateDeployed;
-    private Currency currency = Currency.NAIRA;
+    private CurrencyUnit currency = Monetary.getCurrency("NGN");
     private String terminalType;
     private String ptsa;
     private String ptsp;
@@ -67,11 +68,11 @@ public class POS {
         this.dateDeployed = dateDeployed;
     }
 
-    public Currency getCurrency() {
+    public CurrencyUnit getCurrency() {
         return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(CurrencyUnit currency) {
         this.currency = currency;
     }
 

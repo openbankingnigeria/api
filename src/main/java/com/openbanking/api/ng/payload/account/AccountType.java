@@ -1,6 +1,6 @@
 package com.openbanking.api.ng.payload.account;
 
-import com.openbanking.api.ng.definition.Currency;
+import javax.money.CurrencyUnit;
 
 public class AccountType {
     private String accountTypeId = "1";
@@ -9,7 +9,7 @@ public class AccountType {
     private String maximumBalance = "1000000";
     private String maximumTransactionLimit = "10000";
     private String maximumInFlow;
-    private Currency currency;
+    private CurrencyUnit currency;
     private String  kycLevel;
     private String  documentation;
     private String  cardProduct = "Master Card";
@@ -63,11 +63,11 @@ public class AccountType {
         this.maximumInFlow = maximumInFlow;
     }
 
-    public Currency getCurrency() {
+    public CurrencyUnit getCurrency() {
         return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(CurrencyUnit currency) {
         this.currency = currency;
     }
 
