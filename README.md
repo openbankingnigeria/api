@@ -13,10 +13,10 @@ The project is to create an open source standard APIs for which banks can publis
 ### How do I get set up? ###
 
 * Summary of set up
-    Get this reposiotry by running the command below on your terminal
+    Get this repository by running the command below on your terminal
     
     ```
-	$ git clone https://bitbucket.org/openbankingnigeria/api.git
+	$ git clone https://github.com/openbankingnigeria/api.git
 	```  
     
     The project can be set up easily by implementing the endpoints as fully documented [here](https://api.openbanking.ng/).

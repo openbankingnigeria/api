@@ -1,6 +1,7 @@
 package com.openbanking.api.ng.payload.atm;
 
-import com.openbanking.api.ng.definition.Currency;
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
 
 public class ATM {
 
@@ -14,7 +15,7 @@ public class ATM {
 
     private double latitude = 67;
 
-    private Currency baseCurrency = Currency.NAIRA;
+    private CurrencyUnit baseCurrency = Monetary.getCurrency("NGN");
 
     public String getAtmId() {
         return atmId;
@@ -56,11 +57,11 @@ public class ATM {
         this.latitude = latitude;
     }
 
-    public Currency getBaseCurrency() {
+    public CurrencyUnit getBaseCurrency() {
         return baseCurrency;
     }
 
-    public void setBaseCurrency(Currency baseCurrency) {
+    public void setBaseCurrency(CurrencyUnit baseCurrency) {
         this.baseCurrency = baseCurrency;
     }
 }

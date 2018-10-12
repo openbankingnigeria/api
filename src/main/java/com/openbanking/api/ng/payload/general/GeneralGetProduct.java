@@ -1,13 +1,14 @@
 package com.openbanking.api.ng.payload.general;
 
-import com.openbanking.api.ng.definition.Currency;
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
 
 public class GeneralGetProduct {
     private String productId = "1";
     private String Name = "Laptop";
     private String description = "Macbook Pro";
     private String eligibility;
-    private Currency currency = Currency.EURO;
+    private CurrencyUnit currency = Monetary.getCurrency("EUR");
 
     public String getProductId() {
         return productId;
@@ -41,11 +42,11 @@ public class GeneralGetProduct {
         this.eligibility = eligibility;
     }
 
-    public Currency getCurrency() {
+    public CurrencyUnit getCurrency() {
         return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(CurrencyUnit currency) {
         this.currency = currency;
     }
 }

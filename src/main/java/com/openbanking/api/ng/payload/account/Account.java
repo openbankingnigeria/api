@@ -1,10 +1,12 @@
 package com.openbanking.api.ng.payload.account;
 
 import com.openbanking.api.ng.definition.AccountType;
-import com.openbanking.api.ng.definition.Currency;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
+
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
 
 public class Account {
     @ApiModelProperty(value = "10 digit NUBAN")
@@ -19,7 +21,7 @@ public class Account {
     @ApiModelProperty(value = "The full Name registered with the Account") 
     private String fullName = "Sodiq Fagbola";
     private String shortName = "Sodiq";
-    private Currency currency = Currency.NAIRA;
+    private CurrencyUnit currency = Monetary.getCurrency("NGN");
     private Date accountOpeningDate = new Date();
     private Date lastTransactionDate = new Date();
     private String status = "Successful";
@@ -70,11 +72,11 @@ public class Account {
         this.shortName = shortName;
     }
 
-    public Currency getCurrency() {
+    public CurrencyUnit getCurrency() {
         return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrencyUnit(CurrencyUnit currency) {
         this.currency = currency;
     }
 

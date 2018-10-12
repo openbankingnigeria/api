@@ -1,15 +1,17 @@
 package com.openbanking.api.ng.payload.investment;
 
-import com.openbanking.api.ng.definition.Currency;
 import com.openbanking.api.ng.definition.InvestmentBookingType;
 
 import java.util.Date;
+
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
 public class Investment {
     private String investmentId = "1";
     private String productId = "1";
     private String accountNumber = "0123456780";
     private String amount = "5900";
-    private Currency currency = Currency.EURO;
+    private CurrencyUnit currency = Monetary.getCurrency("EUR");
     private Date dateBooked;
     private Date maturityDate;
     private InvestmentBookingType bookingType = InvestmentBookingType.DISCOUNTED;
@@ -47,11 +49,11 @@ public class Investment {
         this.amount = amount;
     }
 
-    public Currency getCurrency() {
+    public CurrencyUnit getCurrency() {
         return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(CurrencyUnit currency) {
         this.currency = currency;
     }
 
