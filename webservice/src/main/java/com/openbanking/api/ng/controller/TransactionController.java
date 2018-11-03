@@ -14,7 +14,7 @@ import java.util.Collections;
 @RestController
 @RequestMapping("/transaction")
 @Api(value = "/transaction", description = "Transaction related operations", consumes = "application/json", tags = {"transaction"})
-public class TransactionController {
+public class TransactionController extends BaseApiController{
 
     @RequestMapping(value = "/transfer/intra-bank", method = RequestMethod.POST)
     public ResponseEntity<GenericServiceResponse> singleTransferWithinBank(@RequestBody SingleTransferBank singleTransferBank) {

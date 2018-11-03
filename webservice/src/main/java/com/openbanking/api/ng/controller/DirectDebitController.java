@@ -18,7 +18,7 @@ import java.util.Collections;
 @RequestMapping("/dd")
 @Api(value = "Direct Debit", description = "Direct Debit related operations", consumes = "application/json", tags = {"direct_debit"})
 
-public class DirectDebitController {
+public class DirectDebitController extends BaseApiController{
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public ResponseEntity<GenericServiceResponse> setupDirectDebit(@RequestBody DirectDebitSetup directDebitSetup) {
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()

@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("/card")
 @Api(value = "/card", description = "CardType related operations", consumes = "application/json", tags = {"card"})
 
-public class CardController {
+public class CardController extends BaseApiController{
 
     @RequestMapping(value = "/types", method = RequestMethod.GET)
     public List<CardType> getCardTypes() {

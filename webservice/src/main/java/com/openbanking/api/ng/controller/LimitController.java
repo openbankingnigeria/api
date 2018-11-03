@@ -18,7 +18,7 @@ import java.util.Collections;
 @RestController
 @RequestMapping("/limit")
 @Api(value = "/limit", description = "Limit related operations", consumes = "application/json", tags = {"limit"})
-public class LimitController {
+public class LimitController extends BaseApiController{
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ResponseEntity<GenericServiceResponse> getGlobalTransactionLimit() {

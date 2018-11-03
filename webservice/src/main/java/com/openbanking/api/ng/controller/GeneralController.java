@@ -18,7 +18,7 @@ import java.util.Collections;
 @RestController
 @RequestMapping("/general")
 @Api(value = "/general", description = "General related operations", consumes = "application/json", tags = {"general"})
-public class GeneralController {
+public class GeneralController extends BaseApiController{
 
     @RequestMapping(value = "/information/version", method = RequestMethod.GET)
     public ResponseEntity<GenericServiceResponse> getInterfaceVersion() {

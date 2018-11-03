@@ -17,7 +17,7 @@ import java.util.Collections;
 @RequestMapping("/pos")
 @Api(value = "/pos", description = "pos", consumes = "application/json", tags = {"pos"})
 
-public class POSController {
+public class POSController extends BaseApiController{
     @ApiOperation(value = "Finds a POS by Terminal ID",
             notes = "The Terminal ID is the unique identifier for a POS",
             response = POS.class)

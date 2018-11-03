@@ -16,7 +16,7 @@ import java.util.Collections;
 @RestController
 @RequestMapping(value = "/atms")
 @Api(value = "/atms", description = "ATM related operations", produces = "application/json", consumes = "application/json", tags = {"atm"})
-public class ATMController {
+public class ATMController extends BaseApiController {
 
     @ApiOperation(value = "Finds an ATM by Terminal ID",
             notes = "The ....",

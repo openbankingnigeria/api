@@ -17,7 +17,7 @@ import java.util.Collections;
 @RequestMapping("/investment")
 @Api(value = "/investment", description = "investment related operations", consumes = "application/json", tags = {"investment"})
 
-public class InvestmentController {
+public class InvestmentController extends BaseApiController{
     @RequestMapping(value = "/product", method = RequestMethod.GET)
     public ResponseEntity<GenericServiceResponse> getInvestmentProduct() {
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()

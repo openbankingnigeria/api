@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
 
@@ -22,6 +24,12 @@ public class GetStatementOutput {
     private String debitOrCredit;
     private String referenceId = "1";
     private Time transactionTime;
+    
+    @JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy hh:mm:ss")
     private Date valueDate;
+    
+    @JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy hh:mm:ss")
     private Date bookDate;
 }

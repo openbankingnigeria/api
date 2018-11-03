@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.openbanking.api.ng.definition.PeriodType;
 
 import lombok.Data;
@@ -27,7 +28,11 @@ public class SingleTransfer {
     private double longitude = 101;
     private Date transactionDate;
     private PeriodType interval;
+    @JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy hh:mm:ss")
     private Date startDate;
+    @JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy hh:mm:ss")
     private Date endDate;
     private int numberOfTime = 1;
 }

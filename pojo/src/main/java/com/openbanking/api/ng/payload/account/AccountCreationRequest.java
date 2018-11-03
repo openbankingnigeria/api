@@ -2,6 +2,8 @@ package com.openbanking.api.ng.payload.account;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
 @Data
@@ -11,6 +13,8 @@ public class AccountCreationRequest {
     private String firstName = "Sodiq";
     private String surName = "Fagbola";
     private String otherName = "Damilare";
+    @JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private Date dateOfBirth = new Date();
     private String bvn  = "0123456789";
     private String phone = "0900000000";

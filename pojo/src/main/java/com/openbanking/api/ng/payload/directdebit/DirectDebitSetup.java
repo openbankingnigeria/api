@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.openbanking.api.ng.definition.ChannelType;
 
 import lombok.Data;
@@ -34,7 +35,11 @@ public class DirectDebitSetup {
     private String minimumAmount = "100";
     private String maximumAmount = "1000000";
     private int numberOfTransactions;
+    @JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private Date startDate;
+    @JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private Date endDate;
     private Date recurringDate;
     private String recurringPeriod;

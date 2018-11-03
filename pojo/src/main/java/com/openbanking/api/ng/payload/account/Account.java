@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.openbanking.api.ng.definition.AccountType;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -25,7 +26,11 @@ public class Account {
     private String fullName = "Sodiq Fagbola";
     private String shortName = "Sodiq";
     private CurrencyUnit currency = Monetary.getCurrency("NGN");
+    @JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy hh:mm:ss")
     private Date accountOpeningDate = new Date();
+    @JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy hh:mm:ss")
     private Date lastTransactionDate = new Date();
     private String status = "Successful";
     private String bankSortCode = "012";

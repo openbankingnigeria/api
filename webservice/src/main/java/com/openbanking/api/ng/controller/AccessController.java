@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/access")
 @Api(value = "/access", description = "Access related operations", consumes = "application/json", tags = {"access"})
-public class AccessController {
+public class AccessController extends BaseApiController{
 
 
     @RequestMapping(value = "/getAuthorizationToken", method = RequestMethod.GET)

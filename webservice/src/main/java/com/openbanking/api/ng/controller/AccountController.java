@@ -33,7 +33,7 @@ import io.swagger.annotations.ApiResponses;
 @RestController
 @RequestMapping(value = "/account")
 @Api(value = "Account", description = "Account related operations", consumes = "application/json", produces = "application/json", tags = {"account"})
-public class AccountController {
+public class AccountController extends BaseApiController{
 	
 	@Autowired
 	private BankAccountService bankAccountService;

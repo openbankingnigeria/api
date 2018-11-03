@@ -15,7 +15,7 @@ import java.util.Collections;
 @RestController
 @RequestMapping("/agencies")
 @Api(value = "/agencies", description = "Agency related operations", consumes = "application/json", tags = {"agency"})
-public class AgencyController {
+public class AgencyController extends BaseApiController{
     @ApiOperation(value = "Finds an Agency by Agency Code",
             notes = "The Agency Code is the unique identifier for an Agency  as defined by a Bank or Agency Network",
             response = Agency.class)

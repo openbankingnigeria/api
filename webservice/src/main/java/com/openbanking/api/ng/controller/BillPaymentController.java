@@ -21,7 +21,7 @@ import java.util.Collections;
 @RequestMapping("/billpayment")
 @Api(value = "/billpayment", description = "billpayment", consumes = "application/json", tags = {"billpayment"})
 
-public class BillPaymentController {
+public class BillPaymentController extends BaseApiController{
     @RequestMapping(value = "/systems", method = RequestMethod.GET)
     public ResponseEntity<GenericServiceResponse> getBillingSystem() {
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()

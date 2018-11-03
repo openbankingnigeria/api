@@ -1,15 +1,14 @@
 package com.openbanking.api.ng.payload.directdebit;
 
-import com.openbanking.api.ng.definition.ChannelType;
-import com.openbanking.api.ng.definition.OperationStatus;
-import com.openbanking.api.ng.payload.ErrorResponse;
-
-import lombok.Data;
-
 import java.util.Date;
 
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.openbanking.api.ng.definition.ChannelType;
+
+import lombok.Data;
 
 @Data
 public class DirectDebit {
@@ -37,7 +36,11 @@ public class DirectDebit {
     private String minimumAmount = "1000";
     private String maximumAmount = "200000";
     private int numberOfTransactions;
+    @JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private Date startDate;
+    @JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private Date endDate;
     private Date recurringDate;
     private String recurringPeriod;

@@ -16,7 +16,7 @@ import java.util.Collections;
 @RestController
 @RequestMapping("/branch")
 @Api(value = "/branch", description = "Branch related operations", consumes = "application/json", tags = {"branch"})
-public class BranchController {
+public class BranchController extends BaseApiController{
 
     @ApiOperation(value = "Finds a Bank Branch by Branch Code",
             notes = "The Branch Code is the unique identifier for a bank  as defined by a Bank",
