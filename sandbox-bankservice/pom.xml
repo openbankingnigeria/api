@@ -32,18 +32,23 @@
 		<build.final.name>api-ng-sandbox-bankservice</build.final.name>
 	</properties>
 
-   <dependencies>
-   		<dependency>
+	<dependencies>
+		<dependency>
 			<groupId>com.openbanking</groupId>
 			<artifactId>api-ng-pojo</artifactId>
 			<version>${ob.pojo.version}</version>
 		</dependency>
 		<dependency>
-		<groupId>com.openbanking</groupId>
-		<artifactId>api-ng-bankservice</artifactId>
-		<version>${ob.bankservice.version}</version>
-	</dependency>
-   </dependencies>
+			<groupId>com.openbanking</groupId>
+			<artifactId>api-ng-bankservice</artifactId>
+			<version>${ob.bankservice.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
 	<build>
 		<finalName>${build.final.name}</finalName>
 		<plugins>

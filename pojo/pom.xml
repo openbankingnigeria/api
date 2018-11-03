@@ -30,15 +30,6 @@
 		<build.final.name>api-ng-pojo</build.final.name>
 	</properties>
 
-	<dependencies>
-
-		<dependency>
-			<groupId>org.javamoney</groupId>
-			<artifactId>moneta</artifactId>
-			<version>1.2.1</version>
-			<type>pom</type>
-		</dependency>
-	</dependencies>
 	<build>
 		<finalName>${build.final.name}</finalName>
 		<plugins>
