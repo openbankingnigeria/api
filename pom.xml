@@ -12,6 +12,12 @@
 	<name>api-ng-BOM</name>
 	<description>Parent Pom for API for Openbanking (Nigeria)</description>
 
+	<url>https://openbanking.ng/</url>
+	<organization>
+		<url>https://openbanking.ng/</url>
+		<name>Open Banking Nigeria</name>
+	</organization>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -27,8 +33,23 @@
 	</properties>
 	<modules>
 		<module>pojo</module>
+		<module>bankservice</module>
 		<module>webservice</module>
 	</modules>
+	<profiles>
+		<profile>
+			<id>sandbox</id>
+			<properties>
+				<spring.profiles.active>sandbox</spring.profiles.active>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>sandbox-bankservice</module>
+			</modules>
+		</profile>
+	</profiles>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -49,7 +70,7 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
 			<version>2.6.1</version>
-		</dependency>		
+		</dependency>
 		<dependency>
 			<groupId>org.javamoney</groupId>
 			<artifactId>moneta</artifactId>
@@ -76,9 +97,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<url>https://openbanking.ng/</url>
-	<organization>
-		<url>https://openbanking.ng/</url>
-		<name>Open Banking Nigeria</name>
-	</organization>
 </project>

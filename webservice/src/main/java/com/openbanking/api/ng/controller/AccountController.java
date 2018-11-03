@@ -1,20 +1,42 @@
 package com.openbanking.api.ng.controller;
 
-import com.openbanking.api.ng.config.AccessScope;
+import java.util.Collections;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
+import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
+import com.openbanking.api.ng.bank.service.BankAccountService;
 import com.openbanking.api.ng.definition.OperationStatus;
 import com.openbanking.api.ng.payload.GenericServiceResponse;
 import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
-import com.openbanking.api.ng.payload.account.*;
-import io.swagger.annotations.*;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import com.openbanking.api.ng.payload.account.Account;
+import com.openbanking.api.ng.payload.account.AccountBalance;
+import com.openbanking.api.ng.payload.account.AccountBlock;
+import com.openbanking.api.ng.payload.account.AccountCreationRequest;
+import com.openbanking.api.ng.payload.account.AccountCreationResponse;
+import com.openbanking.api.ng.payload.account.AccountType;
 
-import java.util.Collections;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping(value = "/account")
 @Api(value = "Account", description = "Account related operations", consumes = "application/json", produces = "application/json", tags = {"account"})
 public class AccountController {
+	
+	@Autowired
+	private BankAccountService bankAccountService;
 
     @ApiOperation(value = "Finds an Account by Account Number",
             notes = "Gives general Information about an Account Number",
@@ -23,10 +45,20 @@ public class AccountController {
             @ApiResponse(code = 404, message = "Account Not Found"), @ApiResponse(code = 200, response = Account.class, message = "Account Information")})
     @RequestMapping(value = "/{accountNumber}", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<GenericServiceResponse> getAccount(@PathVariable @ApiParam(value = "The Account Number", required = true) String accountNumber) {
-        return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse().withData(new Account())
+    	try {
+    	Account account=bankAccountService.getAccountByAccountNumber(accountNumber);
+    	return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse().withData(account)
                 .withStatus(OperationStatus.SUCCESSFUL)
                 .withMessage(OperationStatus.SUCCESSFUL.name())
                 .build());
+    	}catch(BankResourceNotFoundException nefx) {
+        	return ResponseEntity.notFound ()
+                    .build();
+    	}catch(ServiceOperationNotSupported sNEx) {
+        	return ResponseEntity .notFound ()
+                    .build();	
+    	}
+
     }
 
     @ApiOperation(value = "Get the balance on the account as at the specified date",
