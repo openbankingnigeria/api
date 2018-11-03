@@ -1,13 +1,16 @@
 package com.openbanking.api.ng.payload.transaction;
 
-import com.openbanking.api.ng.definition.PeriodType;
-
 import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
 
+import com.openbanking.api.ng.definition.PeriodType;
+
+import lombok.Data;
+
+@Data
 public class SingleTransfer {
     private String referenceId = "1";
     private String sourceAccount = "0123456789";
@@ -27,150 +30,4 @@ public class SingleTransfer {
     private Date startDate;
     private Date endDate;
     private int numberOfTime = 1;
-
-    public String getSourceAccount() {
-        return sourceAccount;
-    }
-
-    public void setSourceAccount(String sourceAccount) {
-        this.sourceAccount = sourceAccount;
-    }
-
-    public String getSourceAccountName() {
-        return sourceAccountName;
-    }
-
-    public void setSourceAccountName(String sourceAccountName) {
-        this.sourceAccountName = sourceAccountName;
-    }
-
-    public String getSourceAmount() {
-        return sourceAmount;
-    }
-
-    public void setSourceAmount(String sourceAmount) {
-        this.sourceAmount = sourceAmount;
-    }
-
-
-    public CurrencyUnit getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(CurrencyUnit currency) {
-        this.currency = currency;
-    }
-
-    public String getDestinationNarration() {
-        return destinationNarration;
-    }
-
-    public void setDestinationNarration(String destinationNarration) {
-        this.destinationNarration = destinationNarration;
-    }
-
-    public String getTransactionFee() {
-        return transactionFee;
-    }
-
-    public void setTransactionFee(String transactionFee) {
-        this.transactionFee = transactionFee;
-    }
-
-    public String getChannel() {
-        return channel;
-    }
-
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public PeriodType getInterval() {
-        return interval;
-    }
-
-    public void setInterval(PeriodType interval) {
-        this.interval = interval;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public int getNumberOfTime() {
-        return numberOfTime;
-    }
-
-    public void setNumberOfTime(int numberOfTime) {
-        this.numberOfTime = numberOfTime;
-    }
-
-    public String getReferenceId() {
-        return referenceId;
-    }
-
-    public void setReferenceId(String referenceId) {
-        this.referenceId = referenceId;
-    }
-
-    public CurrencyUnit getSourceCurrency() {
-        return sourceCurrency;
-    }
-
-    public void setSourceCurrency(CurrencyUnit sourceCurrency) {
-        this.sourceCurrency = sourceCurrency;
-    }
-
-    public String getSourceNarration() {
-        return sourceNarration;
-    }
-
-    public void setSourceNarration(String sourceNarration) {
-        this.sourceNarration = sourceNarration;
-    }
-
-    public Date getTransactionDate() {
-        return transactionDate;
-    }
-
-    public void setTransactionDate(Date transactionDate) {
-        this.transactionDate = transactionDate;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
 }

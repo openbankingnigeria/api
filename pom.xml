@@ -77,6 +77,11 @@
 			<version>1.2.1</version>
 			<type>pom</type>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>		
 	</dependencies>
 	<build>
 		<plugins>

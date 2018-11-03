@@ -2,6 +2,9 @@ package com.openbanking.api.ng.payload;
 
 import com.openbanking.api.ng.definition.OperationStatus;
 
+import lombok.Data;
+
+@Data
 public class GenericServiceResponse<T> {
 
     private OperationStatus status;
@@ -10,30 +13,6 @@ public class GenericServiceResponse<T> {
 
     private T data;
 
-    public OperationStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(OperationStatus status) {
-        this.status = status;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-
-
+   
 
 }
