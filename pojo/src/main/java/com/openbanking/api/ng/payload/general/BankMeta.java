@@ -1,7 +1,5 @@
 package com.openbanking.api.ng.payload.general;
 import com.openbanking.api.ng.definition.BankCategory;
-import com.openbanking.api.ng.definition.OperationStatus;
-import com.openbanking.api.ng.payload.ErrorResponse;
 
 import lombok.Data;
 
