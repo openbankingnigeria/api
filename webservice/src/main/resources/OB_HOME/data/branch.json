@@ -1,0 +1,14 @@
+[   
+	{
+	    "atmbranchIdId": "b0001",
+	    "branchName": "Ikoyi Branch",
+	    "branchtype": "FULL_BRANCH",
+	    "street": "Adegbola Street",
+	    "city":"Ikoyi",
+	    "state": "Lagos",
+	    "longitude":65,
+	    "latitude":98,
+	    "phoneNumber":"phoneNumber",
+	    "numberOfATMs":34
+	}
+]

@@ -7,6 +7,9 @@ import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
 import com.openbanking.api.ng.payload.account.Account;
 import com.openbanking.api.ng.payload.account.AccountBlock;
 import com.openbanking.api.ng.payload.account.AccountType;
+import com.openbanking.api.ng.payload.customer.PocessingOperationResponse;
+import com.openbanking.api.ng.payload.limit.Limit;
+import com.openbanking.api.ng.payload.limit.LimitCustomer;
 
 public interface BankAccountService {
 
@@ -20,8 +23,12 @@ public interface BankAccountService {
 
 	Account getAccountByEmail(String emailAddress) throws BankResourceNotFoundException,ServiceOperationNotSupported;
 
-	void blockAccount(AccountBlock accountBlock) throws BankResourceNotFoundException,ServiceOperationNotSupported;
+	PocessingOperationResponse blockAccount(AccountBlock accountBlock) throws BankResourceNotFoundException,ServiceOperationNotSupported;
 
-	List<AccountType> getAccountTypes();
+	List<AccountType> getAccountTypes() throws ServiceOperationNotSupported  ;
+
+	LimitCustomer getCustomerTransactionLimit(String accountNumber) throws BankResourceNotFoundException,ServiceOperationNotSupported ;
+
+	Limit getGlobalTransactionLimit() throws ServiceOperationNotSupported  ;
 
 }

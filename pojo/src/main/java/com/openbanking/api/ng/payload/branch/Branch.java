@@ -5,15 +5,15 @@ import lombok.Data;
 @Data
 public class Branch {
 
-   private String  branchId = "1";
-   private String branchName = "Ikoyi Branch";
+   private String  branchId ;
+   private String branchName ;
    private BranchType branchtype ;
-   private String street = "Adegbola Street";
-   private String city = "Ikoyi";
-   private String state = "Lagos";
-   private double longitude = 65;
-   private double latitude = 98;
-   private String phoneNumber = "09000000000";
-   private int numberOfATMs = 34;
+   private String street ;
+   private String city ;
+   private String state ;
+   private double longitude;
+   private double latitude ;
+   private String phoneNumber;
+   private int numberOfATMs;
    
 }

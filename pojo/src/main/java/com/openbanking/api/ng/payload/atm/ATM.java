@@ -1,26 +1,20 @@
 package com.openbanking.api.ng.payload.atm;
 
-import javax.money.CurrencyUnit;
-import javax.money.Monetary;
-
-import com.openbanking.api.ng.definition.OperationStatus;
-import com.openbanking.api.ng.payload.ErrorResponse;
-
 import lombok.Data;
 
 @Data
 public class ATM {
 
-    private String atmId = "1";
+    private String atmId;
 
-    private String terminalId = "1";
+    private String terminalId;
 
-    private String atmName = "Igbosere ATM";
+    private String atmName;
 
-    private double longitude = 32;
+    private double longitude;
 
-    private double latitude = 67;
+    private double latitude;
 
-    private CurrencyUnit baseCurrency = Monetary.getCurrency("NGN");
+    private String baseCurrency;
 
 }

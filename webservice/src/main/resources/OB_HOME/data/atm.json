@@ -1,0 +1,10 @@
+[   
+	{
+	    "atmId": "atm0001",
+	    "terminalId": "t100001",
+	    "atmName": "AIgbosere ATM",
+	    "longitude": 32,
+	    "latitude": 67,
+	    "baseCurrency": "NGN"
+	}
+]

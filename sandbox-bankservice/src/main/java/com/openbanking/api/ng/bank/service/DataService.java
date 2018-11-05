@@ -1,6 +1,7 @@
 package com.openbanking.api.ng.bank.service;
 
 import java.io.File;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 import org.zalando.jackson.datatype.money.MoneyModule;
 
@@ -32,6 +34,19 @@ public class DataService {
     protected ApplicationEventPublisher eventPublisher;
 
     private ObjectMapper objectMapper;
+    
+    public <T> T getSingleFromList(String dataName) {
+		T data=null;
+		List<T> dataList=getModelList(dataName);
+		if(CollectionUtils.isEmpty(dataList)) {
+			data=dataList.get(0);
+		}
+		return data;
+	}
+	
+	public <T> List<T>  getModelList(String dataName) {
+		return getData(dataName, List.class) ;
+	}
 
 
     private File getOBNDataFile(String modelName) throws Exception {

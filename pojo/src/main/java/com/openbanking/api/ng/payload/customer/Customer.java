@@ -10,27 +10,27 @@ import lombok.Data;
 @Data
 public class Customer {
 
-    private String customerID = "1";
+    private String customerID;
 
-    private String firstName = "Sodiq";
+    private String firstName;
 
-    private String lastName = "Fagbola";
+    private String lastName ;
 
-    private String otherNames = "Damilare";
+    private String otherNames;
 
-    private String bvn = "8272918279";
+    private String bvn;
 
-    private String email = "sodiq@openbanking.com";
+    private String email;
 
-    private int numberOfAccounts = 1;
+    private int numberOfAccounts;
 
-    private CustomerType type = CustomerType.CORPORATE;
+    private CustomerType type;
 
     private Date startDateOfRelationship;
 
-    private CustomerStatus status = CustomerStatus.ACTIVE;
+    private CustomerStatus status;
 
-    private String address = "Lagos, Nigeria";
+    private String address;
 
    
 }

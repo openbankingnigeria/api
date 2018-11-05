@@ -42,7 +42,7 @@ public class AgencyController extends BaseApiController{
     {
     	Agency agency=bankInfoService.getAgencyById(agencyId);
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
-                .withData(new Agency())
+                .withData(agency)
                 .withStatus(OperationStatus.SUCCESSFUL)
                 .withMessage(OperationStatus.SUCCESSFUL.name())
                 .build());
@@ -53,7 +53,7 @@ public class AgencyController extends BaseApiController{
     public ResponseEntity<GenericServiceResponse> getAgencies() throws ServiceOperationNotSupported{
     	List<Agency> agencyList=bankInfoService.getAgencies();
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
-                .withData(Collections.singletonList(new Agency()))
+                .withData(agencyList)
                 .withStatus(OperationStatus.SUCCESSFUL)
                 .withMessage(OperationStatus.SUCCESSFUL.name())
                 .build());
@@ -63,9 +63,9 @@ public class AgencyController extends BaseApiController{
     public ResponseEntity<GenericServiceResponse> getAgenciesAtLocation(@PathVariable @ApiParam(value = "The location's latitude") double latitude,
                                               @PathVariable @ApiParam(value = "The location's longitude") double longitude)  throws BankResourceNotFoundException,ServiceOperationNotSupported 
     {
-    	Agency agency=bankInfoService.getAgencyByLongAndLat(longitude,latitude);
+    	List<Agency> agency=bankInfoService.getAgencyByLongAndLat(longitude,latitude);
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
-                .withData(Collections.singletonList(new Agency()))
+                .withData(agency)
                 .withStatus(OperationStatus.SUCCESSFUL)
                 .withMessage(OperationStatus.SUCCESSFUL.name())
                 .build());

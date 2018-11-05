@@ -1,0 +1,14 @@
+[   
+	{
+	    "customerID": "c0001",
+	    "firstName": "Sodiq",
+	    "lastName": "Fagbola",
+	    "otherNames": "ADamilare",
+	    "bvn":"123123123123123",
+	    "email": "sodiq@openbanking.com",
+	    "numberOfAccounts":"1",
+	    "type":"CORPORATE",
+	    "startDateOfRelationship":"03/11/2018 06:12:14",
+	    "address":"Lagos, Nigeria"
+	}
+]
