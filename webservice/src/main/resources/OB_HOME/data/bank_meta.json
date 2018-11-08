@@ -1,0 +1,18 @@
+[   
+	{
+    "bankName": "ABC Bank",
+    "headOfficeAddress": "No 32, ACB Street",
+    "swiftCode": "011",
+    "nibssCode": "012",
+    "cbnBankCode": "013",
+    "numberOfBranches": "300",
+    "numberOfCountryCode": null,
+    "incorporationDate": null,
+    "customerSupportPhone": "090000000000",
+    "customerSupportEmail": "info@abc.ng",
+    "website": "www.abc.ng",
+    "bankCategory": "COMMERCIAL",
+    "socialMediaTypeAndAddress": null,
+    "rc": null
+  }
+]

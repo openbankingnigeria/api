@@ -33,7 +33,6 @@
 		<build.dist.dir>../dist</build.dist.dir>
 	</properties>
 	<modules>
-		<module>pojo</module>
 		<module>bankservice</module>
 		<module>webservice</module>
 	</modules>

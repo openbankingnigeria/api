@@ -11,9 +11,9 @@ import lombok.Data;
 
 @Data
 public class GeneralCharges {
-    private String productName = "Laptop";
-    private String productId = "1";
-    private TransactionType transactionType = TransactionType.DEPOSIT;
+    private String productName;
+    private String productId;
+    private TransactionType transactionType;
     private String standardType;
     private String standardChargeType;
     private String minimumChargeType;
@@ -21,6 +21,6 @@ public class GeneralCharges {
     private String maximumCharge;
     private String MaximumChargeType;
     private String taxRate;
-    private CurrencyUnit currency = Monetary.getCurrency("EUR");
+    private String currency;
 
 }

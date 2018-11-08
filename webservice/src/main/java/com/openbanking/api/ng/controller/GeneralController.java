@@ -1,5 +1,16 @@
 package com.openbanking.api.ng.controller;
 
+import java.util.Collections;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
+import com.openbanking.api.ng.bank.service.GeneralInfoService;
 import com.openbanking.api.ng.definition.OperationStatus;
 import com.openbanking.api.ng.payload.GenericServiceResponse;
 import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
@@ -7,50 +18,52 @@ import com.openbanking.api.ng.payload.general.BankMeta;
 import com.openbanking.api.ng.payload.general.GeneralCharges;
 import com.openbanking.api.ng.payload.general.GeneralGetProduct;
 import com.openbanking.api.ng.payload.general.GeneralInterfaceVersion;
-import io.swagger.annotations.Api;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collections;
+import io.swagger.annotations.Api;
 
 @RestController
 @RequestMapping("/general")
 @Api(value = "/general", description = "General related operations", consumes = "application/json", tags = {"general"})
 public class GeneralController extends BaseApiController{
 
+	@Autowired
+	private GeneralInfoService generalInfoService;
+	
     @RequestMapping(value = "/information/version", method = RequestMethod.GET)
-    public ResponseEntity<GenericServiceResponse> getInterfaceVersion() {
+    public ResponseEntity<GenericServiceResponse> getInterfaceVersion()  throws ServiceOperationNotSupported {
+    	GeneralInterfaceVersion data=generalInfoService.getInterfaceVersion();
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
-                .withData(new GeneralInterfaceVersion())
+                .withData(data)
                 .withStatus(OperationStatus.SUCCESSFUL)
                 .withMessage(OperationStatus.SUCCESSFUL.name())
                 .build());
     }
 
     @RequestMapping(value = "/information", method = RequestMethod.GET)
-    public ResponseEntity<GenericServiceResponse> getBankMeta() {
+    public ResponseEntity<GenericServiceResponse> getBankMeta()  throws  ServiceOperationNotSupported {
+    	BankMeta data=generalInfoService.getBankMeta();
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
-                .withData(new BankMeta())
+                .withData(data)
                 .withStatus(OperationStatus.SUCCESSFUL)
                 .withMessage(OperationStatus.SUCCESSFUL.name())
                 .build());
     }
 
     @RequestMapping(value = "/transaction/charges", method = RequestMethod.GET)
-    public ResponseEntity<GenericServiceResponse> getCharges() {
+    public ResponseEntity<GenericServiceResponse> getCharges()  throws  ServiceOperationNotSupported {
+    	List<GeneralCharges> data=generalInfoService.getCharges();
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
-                .withData(Collections.singletonList(new GeneralCharges()))
+                .withData(data)
                 .withStatus(OperationStatus.SUCCESSFUL)
                 .withMessage(OperationStatus.SUCCESSFUL.name())
                 .build());
     }
 
     @RequestMapping(value = "/products", method = RequestMethod.GET)
-    public ResponseEntity<GenericServiceResponse> getProducts() {
+    public ResponseEntity<GenericServiceResponse> getProducts()  throws  ServiceOperationNotSupported {
+    	List<GeneralGetProduct> data=generalInfoService.getProducts();
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
-                .withData(Collections.singletonList(new GeneralGetProduct()))
+                .withData(data)
                 .withStatus(OperationStatus.SUCCESSFUL)
                 .withMessage(OperationStatus.SUCCESSFUL.name())
                 .build());

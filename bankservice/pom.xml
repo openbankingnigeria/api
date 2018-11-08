@@ -31,13 +31,7 @@
 		<build.final.name>api-ng-bankservice</build.final.name>
 	</properties>
 
-   <dependencies>
-   		<dependency>
-			<groupId>com.openbanking</groupId>
-			<artifactId>api-ng-pojo</artifactId>
-			<version>${ob.pojo.version}</version>
-		</dependency>
-   </dependencies>
+
 	<build>
 		<finalName>${build.final.name}</finalName>
 		<plugins>

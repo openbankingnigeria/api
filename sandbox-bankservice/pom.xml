@@ -35,11 +35,6 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.openbanking</groupId>
-			<artifactId>api-ng-pojo</artifactId>
-			<version>${ob.pojo.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.openbanking</groupId>
 			<artifactId>api-ng-bankservice</artifactId>
 			<version>${ob.bankservice.version}</version>
 		</dependency>

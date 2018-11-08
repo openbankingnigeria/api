@@ -7,10 +7,10 @@ import lombok.Data;
 
 @Data
 public class GeneralGetProduct {
-    private String productId = "1";
-    private String Name = "Laptop";
-    private String description = "Macbook Pro";
+    private String productId;
+    private String name;
+    private String description;
     private String eligibility;
-    private CurrencyUnit currency = Monetary.getCurrency("EUR");
+    private String currency;
 
 }
