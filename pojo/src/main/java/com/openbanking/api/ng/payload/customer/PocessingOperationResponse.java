@@ -1,14 +1,15 @@
 package com.openbanking.api.ng.payload.customer;
 
-import com.openbanking.api.ng.definition.ProcessState;
+import com.openbanking.api.ng.definition.OperationStatus;
 
 import lombok.Data;
 
 @Data
 public class PocessingOperationResponse {
-
-    private ProcessState processState;
-
+	
+    private OperationStatus responseCode = OperationStatus.SUCCESSFUL;
+    private String message = "Successful";
+    private String transactionReferenceId;
     
 
    

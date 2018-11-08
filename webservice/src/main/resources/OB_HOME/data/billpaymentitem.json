@@ -1,0 +1,10 @@
+[   
+	{
+	    "billingSystemId": "1",
+	    "categoryId": "1",
+	    "billerId": "1",
+	    "billPaymentProductId": "1",
+	    "billPaymentProductName":"Electricity",
+	    "fixedOrVariableAmount":"1000"
+	}
+]

@@ -20,6 +20,8 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.openbanking.api.ng.definition.OperationStatus;
+import com.openbanking.api.ng.payload.customer.PocessingOperationResponse;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -80,4 +82,12 @@ public class DataService {
         
         
     }
+
+	public PocessingOperationResponse generateProcessingResponse(OperationStatus requiredStatus) {
+		PocessingOperationResponse response=new PocessingOperationResponse();
+		response.setResponseCode(requiredStatus);
+		response.setTransactionReferenceId(System.currentTimeMillis()+"");
+		response.setMessage(requiredStatus.name());
+		return response;
+	}
 }

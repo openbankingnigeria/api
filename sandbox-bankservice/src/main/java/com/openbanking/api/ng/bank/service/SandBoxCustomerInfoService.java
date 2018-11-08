@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
 import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
+import com.openbanking.api.ng.definition.OperationStatus;
 import com.openbanking.api.ng.definition.ProcessState;
 import com.openbanking.api.ng.payload.customer.Customer;
 import com.openbanking.api.ng.payload.customer.PocessingOperationResponse;
@@ -43,9 +44,7 @@ public class SandBoxCustomerInfoService implements CustomerInfoService {
 	@Override
 	public PocessingOperationResponse block(String customerId)
 			throws BankResourceNotFoundException, ServiceOperationNotSupported {
-		PocessingOperationResponse response=new PocessingOperationResponse();
-		response.setProcessState(ProcessState.SUBMITTED);
-		return response;
+		return dataService.generateProcessingResponse(OperationStatus.SUCCESSFUL);
 	}
 
 	

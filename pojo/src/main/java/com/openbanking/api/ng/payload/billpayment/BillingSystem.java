@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class BillingSystem {
-    private String billingSystemId = "1";
-    private BillingSystem billingSystemName;
+    private String billingSystemId;
+    private String billingSystemName;
 
 }

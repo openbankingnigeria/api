@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class BillerCategory {
-    private String billingSystemId = "1";
-    private String categoryName = "Electricity";
-    private String categoryDescription = "Electricity";
+    private String billingSystemId;
+    private String categoryName;
+    private String categoryDescription;
 
   
 }

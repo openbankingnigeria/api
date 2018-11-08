@@ -5,10 +5,10 @@ import lombok.Data;
 
 @Data
 public class InvestmentProduct {
-    private String productId = "1";
-    private String productName = "Mutual Fund";
+    private String productId ;
+    private String productName ;
     private String productType;
-    private InvestmentBookingType bookingType = InvestmentBookingType.DISCOUNTED;
+    private InvestmentBookingType bookingType;
     private String interestDiscountRate;
 
 }

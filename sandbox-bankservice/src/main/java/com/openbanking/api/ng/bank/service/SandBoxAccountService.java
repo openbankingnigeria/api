@@ -7,11 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
 import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
-import com.openbanking.api.ng.definition.ProcessState;
+import com.openbanking.api.ng.definition.OperationStatus;
 import com.openbanking.api.ng.payload.account.Account;
 import com.openbanking.api.ng.payload.account.AccountBlock;
 import com.openbanking.api.ng.payload.account.AccountType;
 import com.openbanking.api.ng.payload.customer.PocessingOperationResponse;
+import com.openbanking.api.ng.payload.directdebit.DirectDebit;
+import com.openbanking.api.ng.payload.directdebit.DirectDebitCancelRequest;
+import com.openbanking.api.ng.payload.directdebit.DirectDebitSetup;
 import com.openbanking.api.ng.payload.limit.Limit;
 import com.openbanking.api.ng.payload.limit.LimitCustomer;
 
@@ -23,6 +26,8 @@ public class SandBoxAccountService  implements BankAccountService {
 	private static final String ACCOUNT_TYPE_MODEL_FILE_NAME = "AccountType";
 	
 	private static final String LIMIT_MODEL_FILE_NAME = "Limit";
+	
+	private static final String DD_MODEL_FILE_NAME="DiectDebit";
 	
 	
 	
@@ -59,9 +64,7 @@ public class SandBoxAccountService  implements BankAccountService {
 	@Override
 	public PocessingOperationResponse blockAccount(AccountBlock accountBlock)
 			throws BankResourceNotFoundException, ServiceOperationNotSupported {
-		PocessingOperationResponse response=new PocessingOperationResponse();
-		response.setProcessState(ProcessState.SUBMITTED);
-		return response;
+		return dataService.generateProcessingResponse(OperationStatus.SUCCESSFUL);
 		
 	}
 
@@ -82,5 +85,27 @@ public class SandBoxAccountService  implements BankAccountService {
 	}
 	
 	
+
+	@Override
+	public PocessingOperationResponse setupDirectDebit(DirectDebitSetup directDebitSetup)
+			throws BankResourceNotFoundException, ServiceOperationNotSupported {
+		return dataService.generateProcessingResponse(OperationStatus.SUCCESSFUL);
+	}
+
+
+
+	@Override
+	public PocessingOperationResponse cancelDirectDebit(DirectDebitCancelRequest directDebitCancelRequest)
+			throws BankResourceNotFoundException, ServiceOperationNotSupported {
+		return dataService.generateProcessingResponse(OperationStatus.SUCCESSFUL);
+	}
+
+
+
+	@Override
+	public DirectDebit getDirectDebit(String accountNumber, String referenceNumber)
+			throws BankResourceNotFoundException, ServiceOperationNotSupported {
+		return dataService.getSingleFromList(DD_MODEL_FILE_NAME);
+	}
 
 }

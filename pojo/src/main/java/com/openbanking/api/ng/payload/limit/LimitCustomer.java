@@ -8,8 +8,8 @@ import lombok.Data;
 @Data
 public class LimitCustomer {
     private String channel;
-    private TransactionType transactionType = TransactionType.DEPOSIT;
-    private PeriodType periodType = PeriodType.DAY;
+    private TransactionType transactionType;
+    private PeriodType periodType;
     private int maxTransaction;
     private String maxAmountPerTransaction;
     private String maxCumulativeAmount;

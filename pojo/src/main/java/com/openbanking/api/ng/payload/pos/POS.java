@@ -11,20 +11,20 @@ import lombok.Data;
 
 @Data
 public class POS {
-    private String terminalId = "1";
-    private String merchantId = "1";
-    private String merchantName = "Sodiq Fagbola";
-    private String email = "sodiq@openbanking.com";
-    private String phone = "09000000000";
+    private String terminalId;
+    private String merchantId;
+    private String merchantName ;
+    private String email ;
+    private String phone;
     @JsonFormat
     (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy hh:mm:ss")
     private Date dateDeployed;
-    private CurrencyUnit currency = Monetary.getCurrency("NGN");
+    private String currency ;
     private String terminalType;
     private String ptsa;
     private String ptsp;
     private String status;
-    private double latitude = 100;
-    private double longitude = 19;
+    private double latitude;
+    private double longitude;
 
 }

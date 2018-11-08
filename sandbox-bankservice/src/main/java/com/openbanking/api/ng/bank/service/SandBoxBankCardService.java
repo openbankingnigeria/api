@@ -7,16 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
 import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
-import com.openbanking.api.ng.definition.ProcessState;
-import com.openbanking.api.ng.payload.account.Account;
-import com.openbanking.api.ng.payload.account.AccountBlock;
-import com.openbanking.api.ng.payload.account.AccountType;
+import com.openbanking.api.ng.definition.OperationStatus;
 import com.openbanking.api.ng.payload.card.Card;
 import com.openbanking.api.ng.payload.card.CardLimit;
 import com.openbanking.api.ng.payload.card.CardRequest;
 import com.openbanking.api.ng.payload.customer.PocessingOperationResponse;
-import com.openbanking.api.ng.payload.limit.Limit;
-import com.openbanking.api.ng.payload.limit.LimitCustomer;
+import com.openbanking.api.ng.payload.directdebit.DirectDebit;
+import com.openbanking.api.ng.payload.directdebit.DirectDebitCancelRequest;
+import com.openbanking.api.ng.payload.directdebit.DirectDebitSetup;
 
 @Service
 public class SandBoxBankCardService  implements BankCardService {
@@ -43,9 +41,7 @@ public class SandBoxBankCardService  implements BankCardService {
 	@Override
 	public PocessingOperationResponse requestCard(CardRequest cardRequest)
 			throws BankResourceNotFoundException, ServiceOperationNotSupported {
-		PocessingOperationResponse response=new PocessingOperationResponse();
-		response.setProcessState(ProcessState.SUBMITTED);
-		return response;
+		return dataService.generateProcessingResponse(OperationStatus.SUCCESSFUL);
 	}
 
 
@@ -61,8 +57,9 @@ public class SandBoxBankCardService  implements BankCardService {
 	@Override
 	public PocessingOperationResponse setCardLimit(CardLimit cardLimit)
 			throws BankResourceNotFoundException, ServiceOperationNotSupported {
-		PocessingOperationResponse response=new PocessingOperationResponse();
-		response.setProcessState(ProcessState.SUBMITTED);
-		return response;
+		return dataService.generateProcessingResponse(OperationStatus.SUCCESSFUL);
 	}
+
+
+
 }

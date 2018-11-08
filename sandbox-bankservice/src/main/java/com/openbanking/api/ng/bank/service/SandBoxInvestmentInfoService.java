@@ -8,6 +8,7 @@ import org.springframework.util.CollectionUtils;
 
 import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
 import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
+import com.openbanking.api.ng.definition.OperationStatus;
 import com.openbanking.api.ng.definition.ProcessState;
 import com.openbanking.api.ng.payload.agency.Agency;
 import com.openbanking.api.ng.payload.atm.ATM;
@@ -18,7 +19,7 @@ import com.openbanking.api.ng.payload.investment.InvestmentProduct;
 import com.openbanking.api.ng.payload.pos.POS;
 
 @Service
-public class SandInvestmentInfoService implements InvestmentInfoService {
+public class SandBoxInvestmentInfoService implements InvestmentInfoService {
 
 	private static final String INVESTMENT_MODEL_FILE_NAME="Investment";
 	
@@ -41,9 +42,7 @@ public class SandInvestmentInfoService implements InvestmentInfoService {
 	@Override
 	public PocessingOperationResponse bookInvestment(InvestmentBook investmentBook)
 			throws ServiceOperationNotSupported {
-		PocessingOperationResponse processingResponse=new PocessingOperationResponse();
-		processingResponse.setProcessState(ProcessState.SUBMITTED);
-		return processingResponse;
+		return dataService.generateProcessingResponse(OperationStatus.SUCCESSFUL);
 	}
 
 }

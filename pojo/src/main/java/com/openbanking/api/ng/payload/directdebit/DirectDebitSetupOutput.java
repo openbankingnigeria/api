@@ -6,8 +6,8 @@ import lombok.Data;
 
 @Data
 public class DirectDebitSetupOutput {
-    private OperationStatus responseCode = OperationStatus.SUCCESSFUL;
-    private String message = "Successful";
+    private OperationStatus responseCode;
+    private String message;
     private String transactionReferenceId;
 
 }

@@ -11,18 +11,18 @@ import com.openbanking.api.ng.definition.InvestmentBookingType;
 import lombok.Data;
 @Data
 public class Investment {
-    private String investmentId = "1";
-    private String productId = "1";
-    private String accountNumber = "0123456780";
-    private String amount = "5900";
-    private CurrencyUnit currency = Monetary.getCurrency("EUR");
+    private String investmentId;
+    private String productId ;
+    private String accountNumber;
+    private String amount ;
+    private String currency;
     @JsonFormat
     (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy hh:mm:ss")
     private Date dateBooked;
     @JsonFormat
     (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy hh:mm:ss")
     private Date maturityDate;
-    private InvestmentBookingType bookingType = InvestmentBookingType.DISCOUNTED;
+    private InvestmentBookingType bookingType;
     private String interestDiscountRate;
 
 }

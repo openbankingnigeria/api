@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class DirectDebitCancelRequest {
 
-    private String accountNumber = "0123456789";
+    private String accountNumber;
 
     private String referenceNumber;
 

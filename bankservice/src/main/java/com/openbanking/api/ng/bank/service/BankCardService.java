@@ -8,6 +8,9 @@ import com.openbanking.api.ng.payload.card.Card;
 import com.openbanking.api.ng.payload.card.CardLimit;
 import com.openbanking.api.ng.payload.card.CardRequest;
 import com.openbanking.api.ng.payload.customer.PocessingOperationResponse;
+import com.openbanking.api.ng.payload.directdebit.DirectDebit;
+import com.openbanking.api.ng.payload.directdebit.DirectDebitCancelRequest;
+import com.openbanking.api.ng.payload.directdebit.DirectDebitSetup;
 
 public interface BankCardService {
 
@@ -19,6 +22,8 @@ public interface BankCardService {
 	List<CardLimit> getCardLimit(String accountNumber)  throws BankResourceNotFoundException,ServiceOperationNotSupported ;
 
 	PocessingOperationResponse setCardLimit(CardLimit cardLimit)  throws BankResourceNotFoundException,ServiceOperationNotSupported ;
+
+
 
 	
 
