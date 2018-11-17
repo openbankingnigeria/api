@@ -1,8 +1,6 @@
 package ng.openbanking.api.payload.general;
 
 import ng.openbanking.api.payload.definition.TransactionType;
-import com.openbanking.api.ng.payload.ErrorResponse;
-
 import lombok.Data;
 
 @Data

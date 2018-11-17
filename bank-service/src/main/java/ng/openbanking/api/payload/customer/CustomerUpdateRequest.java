@@ -1,7 +1,5 @@
 package ng.openbanking.api.payload.customer;
 
-import com.openbanking.api.ng.payload.ErrorResponse;
-
 import lombok.Data;
 
 @Data

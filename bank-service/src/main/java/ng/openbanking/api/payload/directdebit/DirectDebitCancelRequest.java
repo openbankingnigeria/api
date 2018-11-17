@@ -1,7 +1,6 @@
 package ng.openbanking.api.payload.directdebit;
 
 import ng.openbanking.api.payload.definition.DirectDebitCancelReason;
-import com.openbanking.api.ng.payload.ErrorResponse;
 
 import lombok.Data;
 
