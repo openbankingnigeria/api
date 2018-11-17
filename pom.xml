@@ -36,20 +36,6 @@
 		<module>bankservice</module>
 		<module>webservice</module>
 	</modules>
-	<profiles>
-		<profile>
-			<id>sandbox</id>
-			<properties>
-				<spring.profiles.active>sandbox</spring.profiles.active>
-			</properties>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<modules>
-				<module>sandbox-bankservice</module>
-			</modules>
-		</profile>
-	</profiles>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -82,7 +68,6 @@
 			<artifactId>jackson-datatype-money</artifactId>
 			<version>${jackson-datatype-money.version}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>

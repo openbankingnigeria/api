@@ -14,8 +14,8 @@
 		<groupId>com.openbanking</groupId>
 		<artifactId>api-ng-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
-
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -47,24 +47,6 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 	</dependencies>
-	<profiles>
-		<profile>
-			<id>sandbox</id>
-			<properties>
-				<spring.profiles.active>sandbox</spring.profiles.active>
-			</properties>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<dependencies>
-				<dependency>
-					<groupId>com.openbanking</groupId>
-					<artifactId>api-ng-sandbox-bankservice</artifactId>
-					<version>${ob.sandbox-bankservice.version}</version>
-				</dependency>
-			</dependencies>
-		</profile>
-	</profiles>
 	<build>
 		<finalName>${build.final.name}</finalName>
 		<resources>
