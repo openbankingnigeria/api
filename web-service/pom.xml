@@ -5,7 +5,7 @@
     <parent>
         <artifactId>api-parent</artifactId>
         <groupId>ng.openbanking</groupId>
-        <version>0.0.1</version>
+        <version>0.0.2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -54,4 +54,22 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>demo-web-service</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>demo</spring.profiles.active>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>ng.openbanking</groupId>
+                    <artifactId>demo-web-service</artifactId>
+                    <version>${project.parent.version}</version>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
 </project>

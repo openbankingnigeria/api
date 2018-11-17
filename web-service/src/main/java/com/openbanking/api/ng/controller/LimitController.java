@@ -1,7 +1,16 @@
 package com.openbanking.api.ng.controller;
 
-import java.util.Collections;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiParam;
+import ng.openbanking.api.payload.GenericServiceResponse;
+import ng.openbanking.api.payload.GenericServiceResponseBuilder;
+import ng.openbanking.api.payload.bank.exception.BankResourceNotFoundException;
+import ng.openbanking.api.payload.bank.exception.ServiceOperationNotSupported;
+import ng.openbanking.api.payload.bank.service.BankAccountService;
+import ng.openbanking.api.payload.definition.OperationStatus;
+import ng.openbanking.api.payload.limit.Limit;
+import ng.openbanking.api.payload.limit.LimitCustomer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,17 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
-import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
-import com.openbanking.api.ng.bank.service.BankAccountService;
-import com.openbanking.api.ng.definition.OperationStatus;
-import com.openbanking.api.ng.payload.GenericServiceResponse;
-import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
-import com.openbanking.api.ng.payload.limit.Limit;
-import com.openbanking.api.ng.payload.limit.LimitCustomer;
-
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiParam;
+import java.util.Collections;
 
 @RestController
 @RequestMapping("/limit")
@@ -27,10 +26,10 @@ import io.swagger.annotations.ApiParam;
 public class LimitController extends BaseApiController{
 
 	@Autowired
-	BankAccountService bankAccountService;
+    BankAccountService bankAccountService;
 	
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public ResponseEntity<GenericServiceResponse> getGlobalTransactionLimit() throws ServiceOperationNotSupported  {
+    public ResponseEntity<GenericServiceResponse> getGlobalTransactionLimit() throws ServiceOperationNotSupported {
     	Limit limit=bankAccountService.getGlobalTransactionLimit();
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
                 .withData(Collections.singletonList(limit))

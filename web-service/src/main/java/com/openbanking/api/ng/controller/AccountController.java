@@ -1,35 +1,19 @@
 package com.openbanking.api.ng.controller;
 
-import java.util.Collections;
-import java.util.List;
 
+import io.swagger.annotations.*;
+import ng.openbanking.api.payload.GenericServiceResponse;
+import ng.openbanking.api.payload.GenericServiceResponseBuilder;
+import ng.openbanking.api.payload.account.*;
+import ng.openbanking.api.payload.bank.exception.BankResourceNotFoundException;
+import ng.openbanking.api.payload.bank.exception.ServiceOperationNotSupported;
+import ng.openbanking.api.payload.bank.service.BankAccountService;
+import ng.openbanking.api.payload.definition.OperationStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
-import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
-import com.openbanking.api.ng.bank.service.BankAccountService;
-import com.openbanking.api.ng.definition.OperationStatus;
-import com.openbanking.api.ng.payload.GenericServiceResponse;
-import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
-import com.openbanking.api.ng.payload.account.Account;
-import com.openbanking.api.ng.payload.account.AccountBalance;
-import com.openbanking.api.ng.payload.account.AccountBlock;
-import com.openbanking.api.ng.payload.account.AccountCreationRequest;
-import com.openbanking.api.ng.payload.account.AccountCreationResponse;
-import com.openbanking.api.ng.payload.account.AccountType;
-
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/account")
@@ -45,7 +29,7 @@ public class AccountController extends BaseApiController{
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Account Number supplied"),
             @ApiResponse(code = 404, message = "Account Not Found"), @ApiResponse(code = 200, response = Account.class, message = "Account Information")})
     @RequestMapping(value = "/{accountNumber}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<GenericServiceResponse> getAccount(@PathVariable @ApiParam(value = "The Account Number", required = true) String accountNumber)  throws BankResourceNotFoundException,ServiceOperationNotSupported {
+    public ResponseEntity<GenericServiceResponse> getAccount(@PathVariable @ApiParam(value = "The Account Number", required = true) String accountNumber)  throws BankResourceNotFoundException, ServiceOperationNotSupported {
     	Account account=bankAccountService.getAccountByAccountNumber(accountNumber);
     	return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse().withData(account)
                 .withStatus(OperationStatus.SUCCESSFUL)

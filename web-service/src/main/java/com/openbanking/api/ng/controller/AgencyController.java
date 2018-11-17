@@ -1,8 +1,14 @@
 package com.openbanking.api.ng.controller;
 
-import java.util.Collections;
-import java.util.List;
 
+import io.swagger.annotations.*;
+import ng.openbanking.api.payload.GenericServiceResponse;
+import ng.openbanking.api.payload.GenericServiceResponseBuilder;
+import ng.openbanking.api.payload.agency.Agency;
+import ng.openbanking.api.payload.bank.exception.BankResourceNotFoundException;
+import ng.openbanking.api.payload.bank.exception.ServiceOperationNotSupported;
+import ng.openbanking.api.payload.bank.service.BankInfoService;
+import ng.openbanking.api.payload.definition.OperationStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,19 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
-import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
-import com.openbanking.api.ng.bank.service.BankInfoService;
-import com.openbanking.api.ng.definition.OperationStatus;
-import com.openbanking.api.ng.payload.GenericServiceResponse;
-import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
-import com.openbanking.api.ng.payload.agency.Agency;
+import java.util.List;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 @RestController
 @RequestMapping("/agencies")
 @Api(value = "/agencies", description = "Agency related operations", consumes = "application/json", tags = {"agency"})
@@ -38,7 +33,7 @@ public class AgencyController extends BaseApiController{
             @ApiResponse(code = 404, message = "Agency not found")})
 
     @RequestMapping(value = "/{agencyId}", method = RequestMethod.GET)
-    public ResponseEntity<GenericServiceResponse> getAgency(@PathVariable @ApiParam(value = "The Agency's unique identifier") String agencyId)  throws BankResourceNotFoundException,ServiceOperationNotSupported 
+    public ResponseEntity<GenericServiceResponse> getAgency(@PathVariable @ApiParam(value = "The Agency's unique identifier") String agencyId)  throws BankResourceNotFoundException, ServiceOperationNotSupported
     {
     	Agency agency=bankInfoService.getAgencyById(agencyId);
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()

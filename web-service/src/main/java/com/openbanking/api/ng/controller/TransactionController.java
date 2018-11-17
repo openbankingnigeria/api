@@ -1,34 +1,22 @@
 package com.openbanking.api.ng.controller;
 
-import java.util.Collections;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
-import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
-import com.openbanking.api.ng.bank.service.BankTransactionService;
-import com.openbanking.api.ng.definition.OperationStatus;
-import com.openbanking.api.ng.payload.GenericServiceResponse;
-import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
-import com.openbanking.api.ng.payload.customer.PocessingOperationResponse;
-import com.openbanking.api.ng.payload.transaction.GetStatement;
-import com.openbanking.api.ng.payload.transaction.GetStatementOutput;
-import com.openbanking.api.ng.payload.transaction.MultipleTransfer;
-import com.openbanking.api.ng.payload.transaction.MultipleTransferBank;
-import com.openbanking.api.ng.payload.transaction.MultipleTransferBankOutput;
-import com.openbanking.api.ng.payload.transaction.PlaceHold;
-import com.openbanking.api.ng.payload.transaction.SingleTransfer;
-import com.openbanking.api.ng.payload.transaction.SingleTransferBank;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiParam;
+import ng.openbanking.api.payload.GenericServiceResponse;
+import ng.openbanking.api.payload.GenericServiceResponseBuilder;
+import ng.openbanking.api.payload.bank.exception.BankResourceNotFoundException;
+import ng.openbanking.api.payload.bank.exception.ServiceOperationNotSupported;
+import ng.openbanking.api.payload.bank.service.BankTransactionService;
+import ng.openbanking.api.payload.customer.PocessingOperationResponse;
+import ng.openbanking.api.payload.definition.OperationStatus;
+import ng.openbanking.api.payload.transaction.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Collections;
+import java.util.List;
 
 @RestController
 @RequestMapping("/transaction")
@@ -40,7 +28,7 @@ public class TransactionController extends BaseApiController{
 	
 	
     @RequestMapping(value = "/transfer/intra-bank", method = RequestMethod.POST)
-    public ResponseEntity<GenericServiceResponse> singleTransferWithinBank(@RequestBody SingleTransferBank singleTransferBank) throws BankResourceNotFoundException,ServiceOperationNotSupported{
+    public ResponseEntity<GenericServiceResponse> singleTransferWithinBank(@RequestBody SingleTransferBank singleTransferBank) throws BankResourceNotFoundException, ServiceOperationNotSupported {
     	PocessingOperationResponse processResponse=bankTransactionService.singleTransferWithinBank(singleTransferBank);
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
                 .withData(processResponse)

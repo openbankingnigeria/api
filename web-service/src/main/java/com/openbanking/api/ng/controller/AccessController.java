@@ -1,8 +1,9 @@
 package com.openbanking.api.ng.controller;
-import com.openbanking.api.ng.payload.access.Access;
-import io.github.benas.randombeans.api.EnhancedRandom;
-import io.swagger.annotations.*;
-import org.springframework.beans.factory.annotation.Autowired;
+
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiParam;
+import ng.openbanking.api.payload.access.Access;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,7 @@ public class AccessController extends BaseApiController{
 
 
     @RequestMapping(value = "/getAuthorizationToken", method = RequestMethod.GET)
-    public List<Access> getAuthorizationToken(@ApiParam(value = "Requires Client Identifier, Secret and Grant Type") String clientId,String clientSecret,String grantType ){
+    public List<Access> getAuthorizationToken(@ApiParam(value = "Requires Client Identifier, Secret and Grant Type") String clientId, String clientSecret, String grantType ){
         return Collections.singletonList(new Access());
     }
 

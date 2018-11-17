@@ -1,7 +1,8 @@
 package com.openbanking.api.ng.controller.advice;
 
-import com.openbanking.api.ng.definition.ErrorCode;
-import com.openbanking.api.ng.payload.ErrorResponse;
+
+import ng.openbanking.api.payload.ErrorResponse;
+import ng.openbanking.api.payload.definition.ErrorCode;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

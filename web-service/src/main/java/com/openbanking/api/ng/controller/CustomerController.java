@@ -1,28 +1,19 @@
 package com.openbanking.api.ng.controller;
 
+
+import io.swagger.annotations.*;
+import ng.openbanking.api.payload.GenericServiceResponse;
+import ng.openbanking.api.payload.GenericServiceResponseBuilder;
+import ng.openbanking.api.payload.bank.exception.BankResourceNotFoundException;
+import ng.openbanking.api.payload.bank.exception.ServiceOperationNotSupported;
+import ng.openbanking.api.payload.bank.service.CustomerInfoService;
+import ng.openbanking.api.payload.customer.Customer;
+import ng.openbanking.api.payload.customer.CustomerUpdateRequest;
+import ng.openbanking.api.payload.customer.PocessingOperationResponse;
+import ng.openbanking.api.payload.definition.OperationStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
-import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
-import com.openbanking.api.ng.bank.service.CustomerInfoService;
-import com.openbanking.api.ng.definition.OperationStatus;
-import com.openbanking.api.ng.payload.GenericServiceResponse;
-import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
-import com.openbanking.api.ng.payload.customer.Customer;
-import com.openbanking.api.ng.payload.customer.CustomerUpdateRequest;
-import com.openbanking.api.ng.payload.customer.PocessingOperationResponse;
-
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customer")
@@ -38,7 +29,7 @@ public class CustomerController extends BaseApiController {
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Customer ID supplied"),
             @ApiResponse(code = 404, message = "Customer not found")})
     @RequestMapping(value = "/{customerId}", method = RequestMethod.GET)
-    public ResponseEntity<GenericServiceResponse> getByCustomerId(@PathVariable @ApiParam(value = "The Customer's unique identifier", name = "customerId") String customerId) throws BankResourceNotFoundException,ServiceOperationNotSupported{
+    public ResponseEntity<GenericServiceResponse> getByCustomerId(@PathVariable @ApiParam(value = "The Customer's unique identifier", name = "customerId") String customerId) throws BankResourceNotFoundException, ServiceOperationNotSupported {
     	Customer data=customerInfoService.getByCustomerId(customerId);
     	return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
                 .withData(data)

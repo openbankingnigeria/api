@@ -1,30 +1,25 @@
 package com.openbanking.api.ng.controller;
 
-import java.util.Collections;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
-import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
-import com.openbanking.api.ng.bank.service.BankCardService;
-import com.openbanking.api.ng.definition.OperationStatus;
-import com.openbanking.api.ng.payload.GenericServiceResponse;
-import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
-import com.openbanking.api.ng.payload.card.Card;
-import com.openbanking.api.ng.payload.card.CardLimit;
-import com.openbanking.api.ng.payload.card.CardRequest;
-import com.openbanking.api.ng.payload.card.CardType;
-import com.openbanking.api.ng.payload.customer.PocessingOperationResponse;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiParam;
+import ng.openbanking.api.payload.GenericServiceResponse;
+import ng.openbanking.api.payload.GenericServiceResponseBuilder;
+import ng.openbanking.api.payload.bank.exception.BankResourceNotFoundException;
+import ng.openbanking.api.payload.bank.exception.ServiceOperationNotSupported;
+import ng.openbanking.api.payload.bank.service.BankCardService;
+import ng.openbanking.api.payload.card.Card;
+import ng.openbanking.api.payload.card.CardLimit;
+import ng.openbanking.api.payload.card.CardRequest;
+import ng.openbanking.api.payload.card.CardType;
+import ng.openbanking.api.payload.customer.PocessingOperationResponse;
+import ng.openbanking.api.payload.definition.OperationStatus;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Collections;
+import java.util.List;
 
 @RestController
 @RequestMapping("/card")
@@ -41,7 +36,7 @@ public class CardController extends BaseApiController{
     }
 
     @RequestMapping(value = "/{accountNumber}", method = RequestMethod.GET)
-    public ResponseEntity<GenericServiceResponse> getCards(@PathVariable @ApiParam(value = "The Account Number tied to the Card") String accountNumber)   throws BankResourceNotFoundException,ServiceOperationNotSupported {
+    public ResponseEntity<GenericServiceResponse> getCards(@PathVariable @ApiParam(value = "The Account Number tied to the Card") String accountNumber)   throws BankResourceNotFoundException, ServiceOperationNotSupported {
     	List<Card> cards=bankCardService.getCardsByAccountNumber(accountNumber);
     	return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
                 .withData(cards)

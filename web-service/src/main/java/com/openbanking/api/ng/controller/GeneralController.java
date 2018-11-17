@@ -1,25 +1,23 @@
 package com.openbanking.api.ng.controller;
 
-import java.util.Collections;
-import java.util.List;
 
+import io.swagger.annotations.Api;
+import ng.openbanking.api.payload.GenericServiceResponse;
+import ng.openbanking.api.payload.GenericServiceResponseBuilder;
+import ng.openbanking.api.payload.bank.exception.ServiceOperationNotSupported;
+import ng.openbanking.api.payload.bank.service.GeneralInfoService;
+import ng.openbanking.api.payload.definition.OperationStatus;
+import ng.openbanking.api.payload.general.BankMeta;
+import ng.openbanking.api.payload.general.GeneralCharges;
+import ng.openbanking.api.payload.general.GeneralGetProduct;
+import ng.openbanking.api.payload.general.GeneralInterfaceVersion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
-import com.openbanking.api.ng.bank.service.GeneralInfoService;
-import com.openbanking.api.ng.definition.OperationStatus;
-import com.openbanking.api.ng.payload.GenericServiceResponse;
-import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
-import com.openbanking.api.ng.payload.general.BankMeta;
-import com.openbanking.api.ng.payload.general.GeneralCharges;
-import com.openbanking.api.ng.payload.general.GeneralGetProduct;
-import com.openbanking.api.ng.payload.general.GeneralInterfaceVersion;
-
-import io.swagger.annotations.Api;
+import java.util.List;
 
 @RestController
 @RequestMapping("/general")

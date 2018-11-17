@@ -1,8 +1,14 @@
 package com.openbanking.api.ng.controller;
 
-import java.util.Collections;
-import java.util.List;
 
+import io.swagger.annotations.*;
+import ng.openbanking.api.payload.GenericServiceResponse;
+import ng.openbanking.api.payload.GenericServiceResponseBuilder;
+import ng.openbanking.api.payload.bank.exception.BankResourceNotFoundException;
+import ng.openbanking.api.payload.bank.exception.ServiceOperationNotSupported;
+import ng.openbanking.api.payload.bank.service.BankInfoService;
+import ng.openbanking.api.payload.branch.Branch;
+import ng.openbanking.api.payload.definition.OperationStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,19 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
-import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
-import com.openbanking.api.ng.bank.service.BankInfoService;
-import com.openbanking.api.ng.definition.OperationStatus;
-import com.openbanking.api.ng.payload.GenericServiceResponse;
-import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
-import com.openbanking.api.ng.payload.branch.Branch;
-
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import java.util.List;
 
 @RestController
 @RequestMapping("/branch")
@@ -38,7 +32,7 @@ public class BranchController extends BaseApiController{
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Branch Code supplied"),
             @ApiResponse(code = 404, message = "Branch not found")})
     @RequestMapping(value = "/{branchId}", method = RequestMethod.GET)
-    public ResponseEntity<GenericServiceResponse> getBranch(@PathVariable @ApiParam(value = "The Branch's unique identifier") String branchId) throws BankResourceNotFoundException,ServiceOperationNotSupported{
+    public ResponseEntity<GenericServiceResponse> getBranch(@PathVariable @ApiParam(value = "The Branch's unique identifier") String branchId) throws BankResourceNotFoundException, ServiceOperationNotSupported {
     	Branch branch=bankInfoService.getBanchByBranchId(branchId);
     	return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
                 .withData(branch)

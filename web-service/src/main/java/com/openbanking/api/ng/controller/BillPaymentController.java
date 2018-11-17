@@ -1,8 +1,18 @@
 package com.openbanking.api.ng.controller;
 
-import java.util.Collections;
-import java.util.List;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiParam;
+import ng.openbanking.api.payload.GenericServiceResponse;
+import ng.openbanking.api.payload.GenericServiceResponseBuilder;
+import ng.openbanking.api.payload.bank.exception.BankResourceNotFoundException;
+import ng.openbanking.api.payload.bank.exception.ServiceOperationNotSupported;
+import ng.openbanking.api.payload.bank.service.BillerInfoService;
+import ng.openbanking.api.payload.billpayment.BillPaymentItem;
+import ng.openbanking.api.payload.billpayment.Biller;
+import ng.openbanking.api.payload.billpayment.BillerCategory;
+import ng.openbanking.api.payload.billpayment.BillingSystem;
+import ng.openbanking.api.payload.definition.OperationStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,19 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.openbanking.api.ng.bank.exception.BankResourceNotFoundException;
-import com.openbanking.api.ng.bank.exception.ServiceOperationNotSupported;
-import com.openbanking.api.ng.bank.service.BillerInfoService;
-import com.openbanking.api.ng.definition.OperationStatus;
-import com.openbanking.api.ng.payload.GenericServiceResponse;
-import com.openbanking.api.ng.payload.GenericServiceResponseBuilder;
-import com.openbanking.api.ng.payload.billpayment.BillPaymentItem;
-import com.openbanking.api.ng.payload.billpayment.Biller;
-import com.openbanking.api.ng.payload.billpayment.BillerCategory;
-import com.openbanking.api.ng.payload.billpayment.BillingSystem;
-
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiParam;
+import java.util.List;
 
 @RestController
 @RequestMapping("/billpayment")
@@ -35,7 +33,7 @@ public class BillPaymentController extends BaseApiController{
 	
 	
     @RequestMapping(value = "/systems", method = RequestMethod.GET)
-    public ResponseEntity<GenericServiceResponse> getBillingSystem() throws ServiceOperationNotSupported{
+    public ResponseEntity<GenericServiceResponse> getBillingSystem() throws ServiceOperationNotSupported {
     	List<BillingSystem> systems=billerInfoService.getBillingSystems();
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse()
                 .withData(systems)
