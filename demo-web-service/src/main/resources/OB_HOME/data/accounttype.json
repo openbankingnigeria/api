@@ -1,0 +1,14 @@
+[
+{
+    "accountTypeId": "0123456789",
+    "accountTypeName": "Savings",
+    "minimumBalance": "1000",
+    "maximumBalance": "1000000",
+    "maximumTransactionLimit": "10000",
+    "maximumInFlow": "2500000",
+    "currency": "NGN",
+    "kycLevel": "1",
+    "documentation": "Drivers License",
+    "cardProduct": "Master Card",
+    "digitalProduct": "Fast Cash"
+}]

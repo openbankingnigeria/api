@@ -1,0 +1,11 @@
+[   
+	{
+	    "accountNumber": "0123456789",
+	    "maskedPan": "012****78901",
+	    "token": "ABCED!@DCFVBBDDDD",
+	    "expiry": "10/12",
+	    "issuerNumber":"1",
+	    "cardName":"Sodiq Fagbola",
+	    "cardType": "CREDIT"
+	}
+]

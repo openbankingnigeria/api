@@ -1,0 +1,11 @@
+[   
+	{
+	    "categoryId": "1",
+	    "billerCategory": "Electricity",
+	    "categoryDescription": "Electricity Token",
+	    "billerId": "1",
+	    "nameOfBiller":"EKDEC",
+	    "customerId":"1",
+	    "currency":"NGN"
+	}
+]

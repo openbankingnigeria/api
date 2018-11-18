@@ -1,0 +1,14 @@
+[
+{
+    "agencyID": "10010123456789",
+    "agencyType": "FULL_AGENCY",
+    "agencyName": "Agen 01 (FULL)",
+    "street": "Lekk 1",
+    "city": "Ikoyi",
+    "state": "Lagos",
+    "latitude": "35",
+    "longitude": "76",
+    "phoneNumber": "090000000",
+    "agencyServices": ["CASH_IN","CASH_OUT", "TRANSFER", "BILL_PAYMENT" , "REMITTANCE", "ACCOUNT_OPENING"]
+}
+]

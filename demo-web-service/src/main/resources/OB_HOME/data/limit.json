@@ -1,0 +1,9 @@
+[   
+	{
+	    "transactionType": "DEPOSIT",
+	    "periodType": "DAY",
+	    "maxTransaction": "10000000",
+	    "maxAmountPerTransaction": "1000000000",
+	    "maxCumulativeAmount":"1000000000"
+	}
+]

@@ -1,0 +1,13 @@
+[   
+	{
+	    "Channel": "",
+	    "cardType": {},
+	    "transactionType": "",
+	    "periodType": "",
+	    "maximumTransaction":"100",
+	    "maxAmountPerTransaction":"100",
+	    "maxCumulativeAmount":"100000",
+	    "outstandingTransaction":"100000",
+	    "outstandingCumulativeAmount":"100000"
+	}
+]

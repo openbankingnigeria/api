@@ -1,0 +1,15 @@
+[
+{
+    "accountNumber": "0123456789",
+    "transactionType": "",
+    "currency": "NGN",
+    "narration": "Support fees",
+    "amount": "1000.00",
+    "channel": "",
+    "debitOrCredit": "Debit",
+    "referenceId": "1",
+    "transactionTime": "01/10/2018 08:10:10",
+    "valueDate": "01/10/2018 08:11:10",
+    "bookDate": "01/10/2018 08:11:10"
+}
+]

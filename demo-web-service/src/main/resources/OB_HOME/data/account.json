@@ -1,0 +1,19 @@
+[
+{
+    "accountNumber": "0123456789",
+    "customerId": null,
+    "bvn": "",
+    "fullName": "Sodiq Fagbola",
+    "shortName": "Sodiq",
+    "currency": "NGN",
+    "accountOpeningDate": "03/11/2018 06:12:14",
+    "lastTransactionDate": "03/11/2018 06:12:14",
+    "status": "Successful",
+    "bankSortCode": "012",
+    "accountBalance": "0123456789",
+    "phoneNumber": "090000000",
+    "accountType": "CURRENT",
+    "accountManagerName": "Mujib Ishola",
+    "accountManagerPhone": "08000000000"
+}
+]

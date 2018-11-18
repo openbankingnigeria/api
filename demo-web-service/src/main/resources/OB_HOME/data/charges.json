@@ -1,0 +1,15 @@
+[   
+   {
+      "productName": "Laptop",
+      "productId": "1",
+      "transactionType": "DEPOSIT",
+      "standardType": null,
+      "standardChargeType": null,
+      "minimumChargeType": null,
+      "minimumCharge": null,
+      "maximumCharge": null,
+      "taxRate": null,
+      "currency": "EURO",
+      "maximumChargeType": null
+    }
+]

@@ -1,0 +1,10 @@
+[   
+	{
+	    "productId": "1",
+	    "productName": "Mutual Fund",
+	    "productType": "FULL_BRANCH",
+	    "bookingType": "DISCOUNTED",
+	    "interestDiscountRate":"100.00"
+	}
+
+]
