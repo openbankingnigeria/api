@@ -5,7 +5,7 @@
     <parent>
         <artifactId>api-parent</artifactId>
         <groupId>ng.openbanking</groupId>
-        <version>0.0.4</version>
+        <version>0.0.5-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>bank-service</artifactId>
