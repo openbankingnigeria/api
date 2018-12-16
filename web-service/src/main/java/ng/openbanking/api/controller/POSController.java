@@ -19,9 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collections;
 import java.util.List;
 
+import static ng.openbanking.api.controller.BaseApiController.apiPrefix;
+
 @RestController
-@RequestMapping("/pos")
-@Api(value = "/pos", description = "pos", consumes = "application/json", tags = {"pos"})
+@RequestMapping(apiPrefix+"/pos")
+@Api(value = apiPrefix+"/pos", description = "pos", consumes = "application/json", tags = {"pos"})
 
 public class POSController extends BaseApiController{
 	

@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 
+import static ng.openbanking.api.controller.BaseApiController.apiPrefix;
+
 @RestController
-@RequestMapping("/dd")
+@RequestMapping(apiPrefix+"/dd")
 @Api(value = "Direct Debit", description = "Direct Debit related operations", consumes = "application/json", tags = {"direct_debit"})
 
 public class DirectDebitController extends BaseApiController{

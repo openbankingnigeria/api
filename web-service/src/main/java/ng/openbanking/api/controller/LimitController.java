@@ -20,9 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
 
+import static ng.openbanking.api.controller.BaseApiController.apiPrefix;
+
 @RestController
-@RequestMapping("/limit")
-@Api(value = "/limit", description = "Limit related operations", consumes = "application/json", tags = {"limit"})
+@RequestMapping(apiPrefix+"/limit")
+@Api(value =apiPrefix+ "/limit", description = "Limit related operations", consumes = "application/json", tags = {"limit"})
 public class LimitController extends BaseApiController{
 
 	@Autowired

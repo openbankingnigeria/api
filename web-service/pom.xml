@@ -5,15 +5,21 @@
     <parent>
         <artifactId>api-parent</artifactId>
         <groupId>ng.openbanking</groupId>
-        <version>0.0.5-SNAPSHOT</version>
+        <version>0.0.6-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-
     <artifactId>web-service</artifactId>
+
     <packaging>jar</packaging>
 
     <name>web-service</name>
-    <description>API for Openbanking (Nigeria)</description>
+    <description>Service definition for API for Openbanking (Nigeria)</description>
+
+    <url>https://openbanking.ng/</url>
+    <organization>
+        <name>Open Banking Nigeria</name>
+        <url>https://openbanking.ng/</url>
+    </organization>
 
     <properties>
         <java.version>1.8</java.version>
@@ -31,45 +37,7 @@
             <artifactId>bank-service</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+
     </dependencies>
-    <build>
-        <resources>
-            <resource>
-                <filtering>true</filtering>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-    <profiles>
-        <profile>
-            <id>demo-bank-service</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <spring.profiles.active>demo</spring.profiles.active>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>ng.openbanking</groupId>
-                    <artifactId>demo-web-service</artifactId>
-                    <version>${project.parent.version}</version>
-                </dependency>
-            </dependencies>
-        </profile>
-    </profiles>
 </project>

@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static ng.openbanking.api.controller.BaseApiController.apiPrefix;
+
 @RestController
-@RequestMapping(value = "/account")
-@Api(value = "Account", description = "Account related operations", consumes = "application/json", produces = "application/json", tags = {"account"})
+@RequestMapping(value = apiPrefix+"/account")
+@Api(value = apiPrefix+"Account", description = "Account related operations", consumes = "application/json", produces = "application/json", tags = {"account"})
 public class AccountController extends BaseApiController{
 	
 	@Autowired
@@ -38,12 +40,12 @@ public class AccountController extends BaseApiController{
     }
 
     @ApiOperation(value = "Get the balance on the account as at the specified date",
-            notes = "Get the balance on the account as at the specified date",
+            notes = "Get the balance on the account as at the specified date.Default to current date if no date is specified",
             response = AccountBalance.class, nickname = "Get account balance")
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Account Number supplied"),
             @ApiResponse(code = 404, message = "Account Not Found"), @ApiResponse(code = 200, response = AccountBalance.class, message = "Account Balance Information")})
     @RequestMapping(value = "/balance/{accountNumber}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<GenericServiceResponse> getAccountBalance(@PathVariable @ApiParam(value = "The Account Number", required = true) String accountNumber, @RequestParam @ApiParam(value = "Date in format (yyyy-mm-dd)") String date) {
+    public ResponseEntity<GenericServiceResponse> getAccountBalance(@PathVariable @ApiParam(value = "The Account Number", required = true) String accountNumber, @RequestParam(required = false) @ApiParam(value = "Date in format (yyyy-mm-dd)") String date) {
         return ResponseEntity.ok(GenericServiceResponseBuilder.aGenericServiceResponse().withData(new AccountBalance())
                 .withStatus(OperationStatus.SUCCESSFUL)
                 .withMessage(OperationStatus.SUCCESSFUL.name())

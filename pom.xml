@@ -6,12 +6,12 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
         <version>2.1.0.RELEASE</version>
-        <relativePath />
+        <relativePath></relativePath>
     </parent>
 
     <groupId>ng.openbanking</groupId>
     <artifactId>api-parent</artifactId>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.0.6-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>api-parent</name>
@@ -36,7 +36,6 @@
     </developers>
     <modules>
         <module>bank-service</module>
-        <module>demo-web-service</module>
         <module>web-service</module>
     </modules>
     <scm>
@@ -63,9 +62,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.0.7.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>io.github.benas</groupId>

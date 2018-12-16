@@ -32,6 +32,7 @@ public class SwaggerConfig {
     @Bean
     public Docket api(ApiInfo apiInfo) {
         return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("Open Banking NG")
                 //.securitySchemes(securitySchema()).securityContexts(Arrays.asList(securityContext()))
                 .select()
                 .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))

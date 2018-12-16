@@ -15,9 +15,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import static ng.openbanking.api.controller.BaseApiController.apiPrefix;
+
 @RestController
-@RequestMapping("/customer")
-@Api(value = "/customer", description = "Customer related operations", consumes = "application/json", tags = {"customer"})
+@RequestMapping(apiPrefix+"/customer")
+@Api(value = apiPrefix+"/customer", description = "Customer related operations", consumes = "application/json", tags = {"customer"})
 public class CustomerController extends BaseApiController {
 
 	@Autowired

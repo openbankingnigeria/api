@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import static ng.openbanking.api.controller.BaseApiController.apiPrefix;
+
 @RestController
-@RequestMapping("/agencies")
-@Api(value = "/agencies", description = "Agency related operations", consumes = "application/json", tags = {"agency"})
+@RequestMapping(apiPrefix+"/agencies")
+@Api(value = apiPrefix+"/agencies", description = "Agency related operations", consumes = "application/json", tags = {"agency"})
 public class AgencyController extends BaseApiController{
 	
 	@Autowired

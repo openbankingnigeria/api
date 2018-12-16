@@ -22,9 +22,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import static ng.openbanking.api.controller.BaseApiController.apiPrefix;
+
 @RestController
-@RequestMapping("/billpayment")
-@Api(value = "/billpayment", description = "billpayment", consumes = "application/json", tags = {"billpayment"})
+@RequestMapping(apiPrefix+"/billpayment")
+@Api(value =apiPrefix+ "/billpayment", description = "billpayment", consumes = "application/json", tags = {"billpayment"})
 
 public class BillPaymentController extends BaseApiController{
 	
