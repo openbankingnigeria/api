@@ -1,21 +1,22 @@
 package ng.openbanking.api.payload.account;
 
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
+
 import javax.money.CurrencyUnit;
 
-import lombok.Data;
-
 @Data
-public class AccountType {
-    private String accountTypeId = "1";
-    private String accountTypeName = "Savings";
-    private String minimumBalance = "1000";
-    private String maximumBalance = "1000000";
-    private String maximumTransactionLimit = "10000";
+public class AccountType  extends BasePayload {
+    private String accountTypeId ;
+    private String accountTypeName ;
+    private String minimumBalance;
+    private String maximumBalance;
+    private String maximumTransactionLimit;
     private String maximumInFlow;
     private CurrencyUnit currency;
     private String  kycLevel;
     private String  documentation;
-    private String  cardProduct = "Master Card";
+    private String  cardProduct;
     private String  digitalProduct;
 
    

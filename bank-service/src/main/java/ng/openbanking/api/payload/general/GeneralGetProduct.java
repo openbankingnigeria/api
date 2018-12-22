@@ -1,12 +1,10 @@
 package ng.openbanking.api.payload.general;
 
-import javax.money.CurrencyUnit;
-import javax.money.Monetary;
-
 import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
 
 @Data
-public class GeneralGetProduct {
+public class GeneralGetProduct  extends BasePayload {
     private String productId;
     private String name;
     private String description;

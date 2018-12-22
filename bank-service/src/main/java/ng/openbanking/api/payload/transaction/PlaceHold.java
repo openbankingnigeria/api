@@ -1,18 +1,18 @@
 package ng.openbanking.api.payload.transaction;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
+
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import lombok.Data;
-
 @Data
-public class PlaceHold {
+public class PlaceHold  extends BasePayload {
    
 
-    private String accountNumber = "0123456789";
+    private String accountNumber;
     private String holdReferenceId;
-    private String amount = "10000";
+    private String amount;
     private String reason;
     @JsonFormat
     (shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy hh:mm:ss")

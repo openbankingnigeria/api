@@ -1,12 +1,12 @@
 package ng.openbanking.api.payload.agency;
-import java.util.List;
-
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
 import ng.openbanking.api.payload.definition.AgencyServiceType;
 import ng.openbanking.api.payload.definition.AgencyType;
 
-import lombok.Data;
+import java.util.List;
 @Data
-public class Agency {
+public class Agency  extends BasePayload {
     private String agencyID;
     private String agencyName;
     private AgencyType agencyType;

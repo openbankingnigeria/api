@@ -1,9 +1,10 @@
 package ng.openbanking.api.payload.branch;
+import ng.openbanking.api.payload.base.BasePayload;
 import ng.openbanking.api.payload.definition.BranchType;
 
 import lombok.Data;
 @Data
-public class Branch {
+public class Branch  extends BasePayload {
 
    private String  branchId ;
    private String branchName ;

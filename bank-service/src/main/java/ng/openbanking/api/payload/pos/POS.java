@@ -1,16 +1,13 @@
 package ng.openbanking.api.payload.pos;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
+
 import java.util.Date;
 
-import javax.money.CurrencyUnit;
-import javax.money.Monetary;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import lombok.Data;
-
 @Data
-public class POS {
+public class POS   extends BasePayload {
     private String terminalId;
     private String merchantId;
     private String merchantName ;

@@ -1,14 +1,14 @@
 package ng.openbanking.api.payload.directdebit;
 
-import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
 import ng.openbanking.api.payload.definition.ChannelType;
 
-import lombok.Data;
+import java.util.Date;
 
 @Data
-public class DirectDebitSetup {
+public class DirectDebitSetup  extends BasePayload {
     private String referenceId;
     private String sourceAccount;
     private String sourceAccountName;

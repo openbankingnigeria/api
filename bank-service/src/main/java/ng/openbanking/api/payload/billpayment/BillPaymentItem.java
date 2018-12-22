@@ -1,14 +1,15 @@
 package ng.openbanking.api.payload.billpayment;
 
 import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
 
 @Data
-public class BillPaymentItem {
-    private String billingSystemId = "1";
-    private String categoryId = "1";
-    private String billerId = "1";
-    private String billPaymentProductId = "1";
-    private String billPaymentProductName = "Electricity";
-    private String fixedOrVariableAmount = "1000";
+public class BillPaymentItem  extends BasePayload {
+    private String billingSystemId;
+    private String categoryId;
+    private String billerId;
+    private String billPaymentProductId;
+    private String billPaymentProductName;
+    private String fixedOrVariableAmount;
 
 }

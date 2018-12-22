@@ -1,13 +1,13 @@
 package ng.openbanking.api.payload.account;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
+
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import lombok.Data;
-
 @Data
-public class AccountCreationRequest {
+public class AccountCreationRequest  extends BasePayload {
     private String customerId = "1";
     private String accountName = "Sodiq Fagbola";
     private String firstName = "Sodiq";

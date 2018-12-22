@@ -1,15 +1,16 @@
 package ng.openbanking.api.payload.transaction;
 
+import ng.openbanking.api.payload.base.BasePayload;
 import ng.openbanking.api.payload.definition.OperationStatus;
 
 import lombok.Data;
 
 @Data
-public class MultipleTransferBankOutput {
-    private String batchId = "1";
-    private OperationStatus responseCode = OperationStatus.SUCCESSFUL;
-    private String responseMessage = "Transfer Successful";
-    private String numberOfTransaction = "1";
-    private String transactionId = "1";
+public class MultipleTransferBankOutput  extends BasePayload {
+    private String batchId;
+    private OperationStatus responseCode;
+    private String responseMessage;
+    private String numberOfTransaction;
+    private String transactionId;
 
 }

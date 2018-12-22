@@ -1,15 +1,16 @@
 package ng.openbanking.api.payload.transaction;
 
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
+
 import java.util.List;
 
-import lombok.Data;
-
 @Data
-public class MultipleTransferBank {
+public class MultipleTransferBank  extends BasePayload {
 
-    private String batchId = "1";
+    private String batchId;
 
-    private String numberOfTransaction = "1";
+    private String numberOfTransaction;
 
     List<SingleTransferBank> singleTransferBanks;
 

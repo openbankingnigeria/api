@@ -1,12 +1,13 @@
 package ng.openbanking.api.payload.transaction;
 
+import ng.openbanking.api.payload.base.BasePayload;
 import ng.openbanking.api.payload.definition.OperationStatus;
 
 import lombok.Data;
 
 @Data
-public class RemoveHoldOutput {
+public class RemoveHoldOutput  extends BasePayload {
    
-    private OperationStatus responseCode = OperationStatus.SUCCESSFUL;
-    private String repsonseMessage = "Successful";
+    private OperationStatus responseCode;
+    private String repsonseMessage;
 }

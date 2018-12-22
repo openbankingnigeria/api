@@ -1,19 +1,19 @@
 package ng.openbanking.api.payload.card;
 
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
+import ng.openbanking.api.payload.definition.CardBrand;
+
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
 
-import ng.openbanking.api.payload.definition.CardBrand;
-
-import lombok.Data;
-
 @Data
-public class CardType {
-    private CardBrand cardBrand = CardBrand.MASTER_CARD;
-    private String productId = "1";
+public class CardType  extends BasePayload {
+    private CardBrand cardBrand;
+    private String productId;
     private ng.openbanking.api.payload.definition.CardType cardType = ng.openbanking.api.payload.definition.CardType.CREDIT;
     private String productName;
     private CurrencyUnit currency = Monetary.getCurrency("NGN");
-    private String purchasePrice = "10000";
-    private int validityPeriod = 1;
+    private String purchasePrice;
+    private int validityPeriod;
 }

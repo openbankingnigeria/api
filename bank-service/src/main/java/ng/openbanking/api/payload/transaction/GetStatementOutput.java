@@ -1,18 +1,15 @@
 package ng.openbanking.api.payload.transaction;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
+
 import java.sql.Time;
 import java.util.Date;
 
-import javax.money.CurrencyUnit;
-import javax.money.Monetary;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import lombok.Data;
-
 
 @Data
-public class GetStatementOutput {
+public class GetStatementOutput  extends BasePayload {
    
 
     private String accountNumber;

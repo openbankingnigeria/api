@@ -1,19 +1,20 @@
 package ng.openbanking.api.payload.customer;
 
 import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
 
 @Data
-public class CustomerUpdateRequest {
+public class CustomerUpdateRequest  extends BasePayload {
 
-    private String customerId = "1";
+    private String customerId;
 
-    private String customerName = "Sodiq Fagbola";
+    private String customerName;
 
-    private String email = "sodiq@openbanking.com";
+    private String email;
 
-    private String phoneNumber = "0900000000";
+    private String phoneNumber;
 
-    private String address = "Lagos, Nigeria";
+    private String address;
 
    
 }

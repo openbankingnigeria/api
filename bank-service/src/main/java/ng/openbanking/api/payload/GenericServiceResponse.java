@@ -2,10 +2,10 @@ package ng.openbanking.api.payload;
 
 import ng.openbanking.api.payload.definition.OperationStatus;
 
-import lombok.Data;
+import java.io.Serializable;
 
-@Data
-public class GenericServiceResponse<T> {
+
+public class GenericServiceResponse<T> implements Serializable {
 
     private OperationStatus status;
 
@@ -13,6 +13,28 @@ public class GenericServiceResponse<T> {
 
     private T data;
 
-   
 
+    public OperationStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OperationStatus status) {
+        this.status = status;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
 }

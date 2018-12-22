@@ -1,14 +1,14 @@
 package ng.openbanking.api.payload.account;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import lombok.Data;
-
 @Data
-public class AccountBalance {
+public class AccountBalance  extends BasePayload {
     private String accountNumber = "0123456789";;
     private String accountName = "Adamu Alliu";
     private BigDecimal availableBalance = new BigDecimal(1000000);

@@ -1,13 +1,13 @@
 package ng.openbanking.api.payload.general;
 
-import java.util.List;
-
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
 import ng.openbanking.api.payload.definition.VersionServices;
 
-import lombok.Data;
+import java.util.List;
 
 @Data
-public class GeneralInterfaceVersion {
+public class GeneralInterfaceVersion  extends BasePayload {
     private String versionSupported;
     private List<VersionServices> versionService;
 

@@ -1,13 +1,13 @@
 package ng.openbanking.api.payload.card;
-import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
 import ng.openbanking.api.payload.definition.CardType;
 
-import lombok.Data;
+import java.util.Date;
 
 @Data
-public class Card {
+public class Card  extends BasePayload {
     private String accountNumber;
     private String maskedPan;
     private String token;

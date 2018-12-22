@@ -1,14 +1,14 @@
 package ng.openbanking.api.payload.customer;
 
-import java.util.Date;
-
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
 import ng.openbanking.api.payload.definition.CustomerStatus;
 import ng.openbanking.api.payload.definition.CustomerType;
 
-import lombok.Data;
+import java.util.Date;
 
 @Data
-public class Customer {
+public class Customer  extends BasePayload {
 
     private String customerID;
 

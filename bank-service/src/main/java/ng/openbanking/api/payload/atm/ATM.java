@@ -1,9 +1,10 @@
 package ng.openbanking.api.payload.atm;
 
 import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
 
 @Data
-public class ATM {
+public class ATM  extends BasePayload {
 
     private String atmId;
 

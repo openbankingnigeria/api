@@ -1,15 +1,15 @@
 package ng.openbanking.api.payload.account;
 
-import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
-import ng.openbanking.api.payload.definition.AccountType;
-
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
+import ng.openbanking.api.payload.definition.AccountType;
+
+import java.util.Date;
 
 @Data
-public class Account {
+public class Account extends BasePayload {
     @ApiModelProperty(value = "10 digit NUBAN")
     private String accountNumber;
 

@@ -1,17 +1,17 @@
 package ng.openbanking.api.payload.card;
-import java.util.List;
-
+import lombok.Data;
+import ng.openbanking.api.payload.base.BasePayload;
 import ng.openbanking.api.payload.definition.ChannelType;
 import ng.openbanking.api.payload.definition.PeriodType;
 
-import lombok.Data;
+import java.util.List;
 
 @Data
-public class SetCardLimit {
+public class SetCardLimit  extends BasePayload {
     private List<ChannelType> channelType;
     private String channel;
-    private String transactionType = "Payment";
-    private PeriodType periodType = PeriodType.DAY;
+    private String transactionType;
+    private PeriodType periodType;
 
     
 }

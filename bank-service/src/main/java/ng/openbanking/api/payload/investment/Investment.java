@@ -3,11 +3,12 @@ package ng.openbanking.api.payload.investment;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import ng.openbanking.api.payload.base.BasePayload;
 import ng.openbanking.api.payload.definition.InvestmentBookingType;
 
 import lombok.Data;
 @Data
-public class Investment {
+public class Investment extends BasePayload {
     private String investmentId;
     private String productId ;
     private String accountNumber;
