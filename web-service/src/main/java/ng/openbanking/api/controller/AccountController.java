@@ -27,7 +27,11 @@ public class AccountController extends BaseApiController{
 
     @ApiOperation(value = "Finds an Account by Account Number",
             notes = "Gives general Information about an Account Number",
-            response = Account.class, nickname = "Get a single Account")
+            response = Account.class, nickname = "Get a single Account",
+            authorizations = {
+            @Authorization(value="account",
+                    scopes = {@AuthorizationScope(scope = "get:account", description = "Allows Fetching account")})}
+    )
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Account Number supplied"),
             @ApiResponse(code = 404, message = "Account Not Found"), @ApiResponse(code = 200, response = Account.class, message = "Account Information")})
     @RequestMapping(value = "/{accountNumber}", method = RequestMethod.GET, produces = "application/json")
